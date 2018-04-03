@@ -9,11 +9,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Editor", "Editor", "{7418F6
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Bindings", "Bindings", "{C19E1B11-F964-400D-A017-E3657C1FC1ED}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BindingsKernel", "RealTalkEngine\CelesteEnginePlus\BindingsKernel\BindingsKernel.csproj", "{CBD493A8-DFC5-444A-9BC6-CA02CCD76410}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BindingsKernel", "RealTalkEngine\CelesteEngine\BindingsKernel\BindingsKernel.csproj", "{CBD493A8-DFC5-444A-9BC6-CA02CCD76410}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CelesteEngineEditor", "RealTalkEngine\CelesteEnginePlus\CelesteEngineEditor\CelesteEngineEditor.csproj", "{525AC921-E6CB-473F-AC93-45E5E732C97E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CelesteEngineEditor", "RealTalkEngine\CelesteEngine\CelesteEngineEditor\CelesteEngineEditor.csproj", "{525AC921-E6CB-473F-AC93-45E5E732C97E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CelesteEngineEditorLibrary", "RealTalkEngine\CelesteEnginePlus\CelesteEngineEditorLibrary\CelesteEngineEditorLibrary.csproj", "{B2B41924-FF3D-451F-8A37-7B078053E910}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CelesteEngineEditorLibrary", "RealTalkEngine\CelesteEngine\CelesteEngineEditorLibrary\CelesteEngineEditorLibrary.csproj", "{B2B41924-FF3D-451F-8A37-7B078053E910}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RealTalkEngine", "RealTalkEngine\RealTalkEngine\RealTalkEngine.csproj", "{22508ABB-DE46-479D-933D-0B546364A044}"
 EndProject
