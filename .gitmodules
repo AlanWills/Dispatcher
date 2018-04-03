@@ -1,0 +1,3 @@
+[submodule "RealTalkEngine"]
+	path = RealTalkEngine
+	url = https://github.com/AlanWills/RealTalkEngine.git
