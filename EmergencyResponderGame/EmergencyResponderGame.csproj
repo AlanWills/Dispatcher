@@ -17,4 +17,8 @@
     <ProjectReference Include="..\RealTalkEngine\RealTalkEngine\RealTalkEngine.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Resources\" />
+  </ItemGroup>
+
 </Project>
