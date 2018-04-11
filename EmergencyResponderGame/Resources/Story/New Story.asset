@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Root>
+  <Story NodesImpl="System.Collections.Generic.List`1[RealTalkEngine.StorySystem.Nodes.BaseNode]" name="" guid="752b05f2-9c15-48bd-b50d-d6d8c4166188">
+    <Nodes>
+      <DialogNode Dialog="Test Dialog" name="New Dialog Node" guid="ce294ecd-05b2-4ae6-8d88-62491d949732" />
+    </Nodes>
+  </Story>
+</Root>
