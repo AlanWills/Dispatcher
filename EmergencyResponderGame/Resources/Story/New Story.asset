@@ -2,8 +2,8 @@
 <Root>
   <Story NodesImpl="System.Collections.Generic.List`1[RealTalkEngine.StorySystem.Nodes.BaseNode]" name="" guid="752b05f2-9c15-48bd-b50d-d6d8c4166188">
     <Nodes>
-      <DialogNode Dialog="Test Dialog" name="New Dialog Node" guid="ce294ecd-05b2-4ae6-8d88-62491d949732" />
-      <DialogNode Dialog="" name="New Dialog Node" guid="f77f7651-5cd5-4a3e-bfc8-157fb8f1937c" />
+      <DialogNode Dialog="Test Dialog" position="31.2,106.4" name="New Dialog Node" guid="ce294ecd-05b2-4ae6-8d88-62491d949732" />
+      <DialogNode Dialog="" position="350.2,253.6" name="New Dialog Node" guid="f77f7651-5cd5-4a3e-bfc8-157fb8f1937c" />
     </Nodes>
   </Story>
 </Root>
