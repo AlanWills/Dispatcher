@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Alexa.NET.Request;
 using Alexa.NET.Response.Ssml;
+using Amazon.Lambda.Core;
 using EmergencyResponderGame.IntentHandlers;
 
 namespace EmergencyResponderGame.StorySystem.Nodes
@@ -9,11 +11,11 @@ namespace EmergencyResponderGame.StorySystem.Nodes
     public class CheckNextIntentNode : BaseNode
     {
         #region Properties and Fields
-
+        
         /// <summary>
-        /// The type of the intent handler we are wanting this node to be processed by.
+        /// The name of the intent handler we are wanting this node to be processed by.
         /// </summary>
-        public Type IntentHandlerType { get; }
+        public string IntentName { get; }
 
         /// <summary>
         /// The value we will store in the session attributes to track if the user successfully triggered the correct intent.
@@ -22,20 +24,17 @@ namespace EmergencyResponderGame.StorySystem.Nodes
 
         #endregion
 
-        public CheckNextIntentNode(int nextNodeIndex, Type intentHandlerType, string parameterName) : 
+        public CheckNextIntentNode(int nextNodeIndex, string intentName, string parameterName) : 
             base(nextNodeIndex)
         {
-            IntentHandlerType = intentHandlerType;
+            IntentName = intentName;
             ParameterName = parameterName;
         }
 
-        #region Base Node Abstract Implementations
-
-        public override Speech GetSpeech(IntentHandler currentIntentHandler)
+        public override void ModifySessionAttributes(Dictionary<string, object> attributes, Intent intent, Session session, ILambdaContext lambdaContext)
         {
-            return new Speech();
+            base.ModifySessionAttributes(attributes, intent, session, lambdaContext);
+            attributes.Add(ParameterName, IntentName == intent.Name);
         }
-
-        #endregion
     }
 }

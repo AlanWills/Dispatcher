@@ -8,6 +8,7 @@ using Alexa.NET.Request.Type;
 using Alexa.NET.Response.Ssml;
 using Alexa.NET;
 using EmergencyResponderGame.IntentHandlers;
+using EmergencyResponderGame.StorySystem;
 
 namespace EmergencyResponderGame.RequestHandlers
 {
@@ -16,19 +17,24 @@ namespace EmergencyResponderGame.RequestHandlers
         #region Properties and Fields
 
         /// <summary>
-        /// All of the currently supported intent handlers.
+        /// A list of custom intent handlers we will check first when processing an intent.
         /// </summary>
-        private static List<IntentHandler> IntentHandlers { get; set; } = new List<IntentHandler>()
+        private static List<IntentHandler> CustomIntentHandlers { get; set; } = new List<IntentHandler>();
+
+        /// <summary>
+        /// All of the currently supported intents.
+        /// </summary>
+        private static List<string> SupportedIntents { get; set; } = new List<string>()
         {
-            new PlayGameIntentHandler(),
-            new StartFromNodeIntentHandler(),
-            new YesIntentHandler(),
-            new NoIntentHandler(),
-            new StartCallIntentHandler(),
-            new IsBreathingQuestionIntentHandler(),
-            new IsConsciousQuestionIntentHandler(),
-            new WhatHappenedQuestionIntentHandler(),
-            new EndCallIntentHandler(),
+            Intents.PlayGameIntentName,
+            Intents.StartFromNodeIntentName,
+            Intents.YesIntentName,
+            Intents.NoIntentName,
+            Intents.StartCallIntentName,
+            Intents.IsBreathingQuestionIntentName,
+            Intents.IsConsciousQuestionIntentName,
+            Intents.WhatHappenedQuestionIntentName,
+            Intents.EndCallQuestionIntentName,
         };
 
         #endregion
@@ -57,14 +63,20 @@ namespace EmergencyResponderGame.RequestHandlers
             IntentRequest intentRequest = request.Request as IntentRequest;
             lambdaContext.Logger.LogLine("Request Intent: " + intentRequest.Intent.Name);
 
-            IntentHandler appropriateIntentHandler = IntentHandlers.Find(x => x.IsHandlerForIntent(intentRequest.Intent));
-            if (appropriateIntentHandler != null)
+            IntentHandler handler = CustomIntentHandlers.Find(x => x.IsHandlerForIntent(intentRequest.Intent));
+            if (handler != null)
             {
-                lambdaContext.Logger.LogLine("Intent handler " + appropriateIntentHandler.GetType().Name + " found");
-                return appropriateIntentHandler.HandleIntent(intentRequest.Intent, request.Session, lambdaContext);
+                // Custom handler
+                return handler.HandleIntent(intentRequest.Intent, request.Session, lambdaContext);
+            }
+            else if (SupportedIntents.Contains(intentRequest.Intent.Name))
+            {
+                // Otherwise we have a story intent
+                return Story.CreateResponse(intentRequest.Intent, request.Session, lambdaContext);
             }
             else
             {
+                // Otherwise we have no way of dealing with this intent
                 lambdaContext.Logger.LogLine("No intent handler found");
                 return ResponseBuilder.Empty();
             }

@@ -7,23 +7,18 @@ using System.Text;
 
 namespace EmergencyResponderGame.StorySystem.Nodes
 {
-    public class DialogNode : BaseNode
+    public class SpeechNode : BaseNode
     {
         #region Properties and Fields
 
-        private Speech Speech { get; }
+        public Speech Speech { get; }
         
         #endregion
 
-        public DialogNode(int nextNodeIndex, SpeechBuilder speech) :
+        public SpeechNode(int nextNodeIndex, SpeechBuilder speech) :
             base(nextNodeIndex)
         {
             Speech = speech.Build();
-        }
-
-        public override Speech GetSpeech(IntentHandler currentIntentHandler)
-        {
-            return Speech;
         }
     }
 }

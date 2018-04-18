@@ -16,14 +16,9 @@ namespace EmergencyResponderGame.IntentHandlers
         #region Properties and Fields
 
         /// <summary>
-        /// The name in the Alexa Dev Console for this intent.
-        /// </summary>
-        public const string ConstIntentName = "PlayGameIntent";
-
-        /// <summary>
         /// The name of the intent this handler will process.
         /// </summary>
-        public override string IntentName { get { return ConstIntentName; } }
+        public override string IntentName { get { return Intents.PlayGameIntentName; } }
 
         #endregion
 
@@ -39,14 +34,16 @@ namespace EmergencyResponderGame.IntentHandlers
         /// <returns></returns>
         public override SkillResponse HandleIntent(Intent intent, Session session, ILambdaContext lambdaContext)
         {
-            BaseNode firstNode = Story.Nodes[0];
-            SkillResponse response = ResponseBuilder.Tell(firstNode.GetSpeech(this));
+            if (session.Attributes.ContainsKey(Story.CurrentNodeIndexKey))
+            {
+                session.Attributes[Story.CurrentNodeIndexKey] = 0;
+            }
+            else
+            {
+                session.Attributes.Add(Story.CurrentNodeIndexKey, 0);
+            }
 
-            response.Response.ShouldEndSession = Story.Nodes.Count == firstNode.NextNodeIndex;
-            response.SessionAttributes = response.SessionAttributes ?? new Dictionary<string, object>();
-            response.SessionAttributes.Add(Story.CurrentNodeIndexKey, firstNode.NextNodeIndex);
-
-            return response;
+            return Story.CreateResponse(intent, session, lambdaContext);
         }
 
         #endregion

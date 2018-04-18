@@ -1,4 +1,7 @@
-﻿using Alexa.NET.Response.Ssml;
+﻿using Alexa.NET.Request;
+using Alexa.NET.Response;
+using Alexa.NET.Response.Ssml;
+using Amazon.Lambda.Core;
 using EmergencyResponderGame.IntentHandlers;
 using System;
 using System.Collections.Generic;
@@ -11,7 +14,7 @@ namespace EmergencyResponderGame.StorySystem.Nodes
         #region Properties and Fields
 
         public int NextNodeIndex { get; }
-        
+
         #endregion
 
         public BaseNode(int nextNodeIndex)
@@ -21,11 +24,13 @@ namespace EmergencyResponderGame.StorySystem.Nodes
 
         #region Abstract and Virtual Functions
 
-        public abstract Speech GetSpeech(IntentHandler currentIntentHandler);
-
-        public virtual BaseNode GetNextNode(IntentHandler currentIntentHandler)
+        public virtual BaseNode GetNextNode(Intent intent, Session session, ILambdaContext lambdaContext)
         {
             return NextNodeIndex < Story.Nodes.Count ? Story.Nodes[NextNodeIndex] : null;
+        }
+
+        public virtual void ModifySessionAttributes(Dictionary<string, object> attributes, Intent intent, Session session, ILambdaContext lambdaContext)
+        {
         }
 
         #endregion

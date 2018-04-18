@@ -13,12 +13,7 @@ namespace EmergencyResponderGame.IntentHandlers
     public class StartFromNodeIntentHandler : IntentHandler
     {
         #region Properties and Fields
-
-        /// <summary>
-        /// The AWS intent name that this handler will process.
-        /// </summary>
-        public const string ConstIntentName = "StartFromNodeIntent";
-
+        
         /// <summary>
         /// The name of the slot for the node index.
         /// </summary>
@@ -27,21 +22,16 @@ namespace EmergencyResponderGame.IntentHandlers
         /// <summary>
         /// The AWS intent name that this handler will process.
         /// </summary>
-        public override string IntentName { get { return ConstIntentName; } }
+        public override string IntentName { get { return Intents.StartFromNodeIntentName; } }
 
         #endregion
 
         public override SkillResponse HandleIntent(Intent intent, Session session, ILambdaContext lambdaContext)
         {
             int nodeIndex = int.Parse(intent.Slots["NodeIndex"].Value);
-            BaseNode node = Story.Nodes[nodeIndex - 1];
-            SkillResponse response = ResponseBuilder.Tell(node.GetSpeech(this));
+            session.Attributes[Story.CurrentNodeIndexKey] = nodeIndex - 1;
 
-            response.Response.ShouldEndSession = Story.Nodes.Count == node.NextNodeIndex;
-            response.SessionAttributes = response.SessionAttributes ?? new Dictionary<string, object>();
-            response.SessionAttributes.Add(Story.CurrentNodeIndexKey, node.NextNodeIndex);
-
-            return response;
+            return Story.CreateResponse(intent, session, lambdaContext);
         }
     }
 }
