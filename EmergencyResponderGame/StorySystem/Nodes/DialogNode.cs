@@ -1,4 +1,5 @@
 ﻿using Alexa.NET.Response.Ssml;
+using EmergencyResponderGame.IntentHandlers;
 using EmergencyResponderGame.SpeechUtilities;
 using System;
 using System.Collections.Generic;
@@ -20,7 +21,7 @@ namespace EmergencyResponderGame.StorySystem.Nodes
             Speech = speech.Build();
         }
 
-        public override Speech GetSpeech()
+        public override Speech GetSpeech(IntentHandler currentIntentHandler)
         {
             return Speech;
         }

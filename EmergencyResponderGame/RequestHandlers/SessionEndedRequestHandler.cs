@@ -6,6 +6,7 @@ using Alexa.NET.Response;
 using Alexa.NET.Request.Type;
 using Alexa.NET;
 using Amazon.Lambda.Core;
+using Alexa.NET.Response.Ssml;
 
 namespace EmergencyResponderGame.RequestHandlers
 {
@@ -32,7 +33,10 @@ namespace EmergencyResponderGame.RequestHandlers
         public override SkillResponse HandleRequest(SkillRequest request, ILambdaContext lambdaContext)
         {
             lambdaContext.Logger.LogLine("Session ended");
-            return ResponseBuilder.Empty();
+
+            Speech speech = new Speech();
+            speech.Elements.Add(new Sentence("Goodbye"));
+            return ResponseBuilder.Tell(speech);
         }
 
         #endregion

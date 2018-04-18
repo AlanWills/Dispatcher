@@ -18,22 +18,17 @@ namespace EmergencyResponderGame.IntentHandlers
         /// <summary>
         /// The name in the Alexa Dev Console for this intent.
         /// </summary>
-        public const string IntentName = "PlayGameIntent";
+        public const string ConstIntentName = "PlayGameIntent";
+
+        /// <summary>
+        /// The name of the intent this handler will process.
+        /// </summary>
+        public override string IntentName { get { return ConstIntentName; } }
 
         #endregion
 
         #region Intent Handler Abstract Implementations
-
-        /// <summary>
-        /// Returns true if the inputted intent matches the IntentName const variable.
-        /// </summary>
-        /// <param name="intent"></param>
-        /// <returns></returns>
-        public override bool IsHandlerForIntent(Intent intent)
-        {
-            return intent.Name == IntentName;
-        }
-
+        
         /// <summary>
         /// The behaviour when the game first starts.
         /// This is currently to play an introduction.
@@ -45,7 +40,7 @@ namespace EmergencyResponderGame.IntentHandlers
         public override SkillResponse HandleIntent(Intent intent, Session session, ILambdaContext lambdaContext)
         {
             BaseNode firstNode = Story.Nodes[0];
-            SkillResponse response = ResponseBuilder.Tell(firstNode.GetSpeech());
+            SkillResponse response = ResponseBuilder.Tell(firstNode.GetSpeech(this));
 
             response.Response.ShouldEndSession = Story.Nodes.Count == firstNode.NextNodeIndex;
             response.SessionAttributes = response.SessionAttributes ?? new Dictionary<string, object>();

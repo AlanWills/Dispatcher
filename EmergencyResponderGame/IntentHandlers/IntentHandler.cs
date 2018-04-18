@@ -9,6 +9,15 @@ namespace EmergencyResponderGame.IntentHandlers
 {
     public abstract class IntentHandler
     {
+        #region Properties and Fields
+
+        /// <summary>
+        /// The AWS name for the intent this handler is processing.
+        /// </summary>
+        public abstract string IntentName { get; }
+
+        #endregion
+
         #region Intent Handler Abstract Functions
 
         /// <summary>
@@ -16,7 +25,7 @@ namespace EmergencyResponderGame.IntentHandlers
         /// </summary>
         /// <param name="intent"></param>
         /// <returns></returns>
-        public abstract bool IsHandlerForIntent(Intent intent);
+        public bool IsHandlerForIntent(Intent intent) { return intent.Name == IntentName; }
 
         /// <summary>
         /// Handle the inputted intent and return an appropriate reponse.

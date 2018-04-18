@@ -34,7 +34,9 @@ namespace EmergencyResponderGame
         /// <returns></returns>
         public static int GetCurrentNodeIndex(this Session session)
         {
-            return GetSessionAttribute<int>(session, Story.CurrentNodeIndexKey);
+            // AWS converts 32 bit ints to 64 bit ints automatically, so we have to convert back here
+            long currentNodeIndex = GetSessionAttribute<long>(session, Story.CurrentNodeIndexKey);
+            return (int)currentNodeIndex;
         }
     }
 }

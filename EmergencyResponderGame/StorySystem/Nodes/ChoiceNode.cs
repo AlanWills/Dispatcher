@@ -26,17 +26,17 @@ namespace EmergencyResponderGame.StorySystem.Nodes
             }
         }
 
-        public int GetNextNodeIndexForChoice(string choice)
+        public override BaseNode GetNextNode(IntentHandler currentIntentHandler)
         {
-            if (!Choices.ContainsKey(choice))
+            if (!Choices.ContainsKey(currentIntentHandler.IntentName))
             {
-                return NextNodeIndex;
+                return base.GetNextNode(currentIntentHandler);
             }
 
-            return Choices[choice];
+            return Story.Nodes[Choices[currentIntentHandler.IntentName]];
         }
 
-        public override Speech GetSpeech()
+        public override Speech GetSpeech(IntentHandler currentIntentHandler)
         {
             return new Speech();
         }
@@ -46,8 +46,8 @@ namespace EmergencyResponderGame.StorySystem.Nodes
         public static ChoiceNode CreateYesNoChoiceNode(int yesIndex, int noIndex)
         {
             return new ChoiceNode(noIndex,
-                new KeyValuePair<string, int>(YesIntentHandler.IntentName, yesIndex),
-                new KeyValuePair<string, int>(NoIntentHandler.IntentName, noIndex));
+                new KeyValuePair<string, int>(YesIntentHandler.ConstIntentName, yesIndex),
+                new KeyValuePair<string, int>(NoIntentHandler.ConstIntentName, noIndex));
         }
 
         #endregion

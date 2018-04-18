@@ -17,22 +17,17 @@ namespace EmergencyResponderGame.IntentHandlers
         /// <summary>
         /// The name of the intent this handler will process.
         /// </summary>
-        public const string IntentName = "AMAZON.NoIntent";
+        public const string ConstIntentName = "AMAZON.NoIntent";
+
+        /// <summary>
+        /// The name of the intent this handler will process.
+        /// </summary>
+        public override string IntentName { get { return ConstIntentName; } }
 
         #endregion
 
         #region Intent Handler Abstract Implementations
-
-        /// <summary>
-        /// Returns true if the inputted intent's name matches the IntentName variable.
-        /// </summary>
-        /// <param name="intent"></param>
-        /// <returns></returns>
-        public override bool IsHandlerForIntent(Intent intent)
-        {
-            return intent.Name == IntentName;
-        }
-
+        
         /// <summary>
         /// Gets the current node in the story as a choice node and obtains the next node in the story based on the 'Yes' choice.
         /// </summary>
@@ -44,9 +39,8 @@ namespace EmergencyResponderGame.IntentHandlers
         {
             int currentNodeIndex = session.GetCurrentNodeIndex();
             ChoiceNode choiceNode = Story.Nodes[currentNodeIndex] as ChoiceNode;
-            int nextNodeIndex = choiceNode.GetNextNodeIndexForChoice(IntentName);
-            BaseNode nextNode = Story.Nodes[nextNodeIndex];
-            SkillResponse response = ResponseBuilder.Tell(nextNode.GetSpeech());
+            BaseNode nextNode = choiceNode.GetNextNode(this);
+            SkillResponse response = ResponseBuilder.Tell(nextNode.GetSpeech(this));
 
             response.Response.ShouldEndSession = Story.Nodes.Count == nextNode.NextNodeIndex;
             response.SessionAttributes = response.SessionAttributes ?? new Dictionary<string, object>();

@@ -20,7 +20,15 @@ namespace EmergencyResponderGame.RequestHandlers
         /// </summary>
         private static List<IntentHandler> IntentHandlers { get; set; } = new List<IntentHandler>()
         {
-            new PlayGameIntentHandler()
+            new PlayGameIntentHandler(),
+            new StartFromNodeIntentHandler(),
+            new YesIntentHandler(),
+            new NoIntentHandler(),
+            new StartCallIntentHandler(),
+            new IsBreathingQuestionIntentHandler(),
+            new IsConsciousQuestionIntentHandler(),
+            new WhatHappenedQuestionIntentHandler(),
+            new EndCallIntentHandler(),
         };
 
         #endregion
@@ -50,7 +58,16 @@ namespace EmergencyResponderGame.RequestHandlers
             lambdaContext.Logger.LogLine("Request Intent: " + intentRequest.Intent.Name);
 
             IntentHandler appropriateIntentHandler = IntentHandlers.Find(x => x.IsHandlerForIntent(intentRequest.Intent));
-            return appropriateIntentHandler != null ? appropriateIntentHandler.HandleIntent(intentRequest.Intent, request.Session, lambdaContext) : ResponseBuilder.Empty();
+            if (appropriateIntentHandler != null)
+            {
+                lambdaContext.Logger.LogLine("Intent handler " + appropriateIntentHandler.GetType().Name + " found");
+                return appropriateIntentHandler.HandleIntent(intentRequest.Intent, request.Session, lambdaContext);
+            }
+            else
+            {
+                lambdaContext.Logger.LogLine("No intent handler found");
+                return ResponseBuilder.Empty();
+            }
         }
 
         #endregion
