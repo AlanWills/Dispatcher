@@ -32,29 +32,14 @@ namespace EmergencyResponderGame.StorySystem
             new SpeechNode(4, new SpeechBuilder().
                 Add(new Audio("https://s3-eu-west-1.amazonaws.com/nine-nine-nine/C1_Demo/C1_Demo_Handler_Ready_Yes.mp3")).
                 Add(new Break() { Time = "1s" }).
-                Add(new Audio("https://s3-eu-west-1.amazonaws.com/nine-nine-nine/C1_Demo/C1_Demo_Handler_WhatHappened.mp3")).
-                Add(new Audio("https://s3-eu-west-1.amazonaws.com/nine-nine-nine/C1_Demo/C1_Demo_Caller_WhatHappened.mp3")).
-                Add(new Audio("https://s3-eu-west-1.amazonaws.com/nine-nine-nine/C1_Demo/C1_Demo_Handler_Breathing.mp3"))),
-
-                // NOT ALLOWED MORE THAN FIVE.  ARGH
-                // Concatenate the actual call into one using FFMPEG
-                //Add(new Audio("https://s3-eu-west-1.amazonaws.com/nine-nine-nine/C1_Demo/C1_Demo_Caller_Breathing.mp3")).
-                //Add(new Audio("https://s3-eu-west-1.amazonaws.com/nine-nine-nine/C1_Demo/C1_Demo_Handler_Conscious.mp3")).
-                //Add(new Audio("https://s3-eu-west-1.amazonaws.com/nine-nine-nine/C1_Demo/C1_Demo_Caller_Conscious.mp3")).
-                //Add(new Audio("https://s3-eu-west-1.amazonaws.com/nine-nine-nine/C1_Demo/C1_Demo_Handler_EndCall.mp3")).
-                //Add(new Break() { Time = "1s" }).
-                //Add(new Audio("https://s3-eu-west-1.amazonaws.com/nine-nine-nine/C1_Demo/C1_Demo_Handler_EndDemo.mp3"))),
+                Add(new Audio("https://s3-eu-west-1.amazonaws.com/nine-nine-nine/C1_Demo/C1_Call_Demo.mp3")).
+                Add(new Break() { Time = "1s" }).
+                Add(new Audio("https://s3-eu-west-1.amazonaws.com/nine-nine-nine/C1_Demo/C1_Demo_Handler_EndDemo.mp3"))),
             // 3
             new SpeechNode(4, new SpeechBuilder().
                 Add(new Audio("https://s3-eu-west-1.amazonaws.com/nine-nine-nine/C1_Demo/C1_Demo_Handler_Ready_No.mp3")).
                 Add(new Break() { Time = "1s" }).
-                Add(new Audio("https://s3-eu-west-1.amazonaws.com/nine-nine-nine/C1_Demo/C1_Demo_Handler_WhatHappened.mp3")).
-                Add(new Audio("https://s3-eu-west-1.amazonaws.com/nine-nine-nine/C1_Demo/C1_Demo_Caller_WhatHappened.mp3")).
-                Add(new Audio("https://s3-eu-west-1.amazonaws.com/nine-nine-nine/C1_Demo/C1_Demo_Handler_Breathing.mp3")).
-                Add(new Audio("https://s3-eu-west-1.amazonaws.com/nine-nine-nine/C1_Demo/C1_Demo_Caller_Breathing.mp3")).
-                Add(new Audio("https://s3-eu-west-1.amazonaws.com/nine-nine-nine/C1_Demo/C1_Demo_Handler_Conscious.mp3")).
-                Add(new Audio("https://s3-eu-west-1.amazonaws.com/nine-nine-nine/C1_Demo/C1_Demo_Caller_Conscious.mp3")).
-                Add(new Audio("https://s3-eu-west-1.amazonaws.com/nine-nine-nine/C1_Demo/C1_Demo_Handler_EndCall.mp3")).
+                Add(new Audio("https://s3-eu-west-1.amazonaws.com/nine-nine-nine/C1_Demo/C1_Call_Demo.mp3")).
                 Add(new Break() { Time = "1s" }).
                 Add(new Audio("https://s3-eu-west-1.amazonaws.com/nine-nine-nine/C1_Demo/C1_Demo_Handler_EndDemo.mp3"))),
             // 4
