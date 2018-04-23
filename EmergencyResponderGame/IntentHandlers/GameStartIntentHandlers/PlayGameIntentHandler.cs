@@ -36,10 +36,12 @@ namespace EmergencyResponderGame.IntentHandlers
         {
             if (session.Attributes.ContainsKey(Story.CurrentNodeIndexKey))
             {
+                lambdaContext.Logger.LogLine("Setting current node index to 0");
                 session.Attributes[Story.CurrentNodeIndexKey] = 0;
             }
             else
             {
+                lambdaContext.Logger.LogLine("Adding current node index attribute with value 0");
                 session.Attributes.Add(Story.CurrentNodeIndexKey, 0);
             }
 

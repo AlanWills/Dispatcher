@@ -23,55 +23,69 @@ namespace EmergencyResponderGame.StorySystem
 
         public static List<BaseNode> Nodes { get; set; } = new List<BaseNode>()
         {
+            // 0
             new SpeechNode(1, new SpeechBuilder().
-                Add(new Sentence("Welcome to your training as an emergency call handler.")).
-                Add(new Sentence("We're going to dive in at the deep end and learn about the first of four call categories.")).
-                Add(new Sentence("This category is called C1 and is for life threatening cases such as heart attack or serious allergies.")).
-                Add(new Sentence("I'm going to show you exactly what to do when receiving a call like this.")).
-                Add(new Break() { Time = "1s" }).
-                Add(new Sentence("Ready?"))),
+                Add(new Audio("https://s3-eu-west-1.amazonaws.com/nine-nine-nine/Introduction/Introduction.mp3"))),
+            // 1
             ConditionNode.CreateYesNoChoiceNode(2, 3),
+            // 2
             new SpeechNode(4, new SpeechBuilder().
-                Add(new Sentence("Great stuff!  Now listen carefully.")).
+                Add(new Audio("https://s3-eu-west-1.amazonaws.com/nine-nine-nine/C1_Demo/C1_Demo_Handler_Ready_Yes.mp3")).
                 Add(new Break() { Time = "1s" }).
-                Add(new Sentence("Hello, nine nine nine.")).
-                Add(new Sentence("Hello, my husband has collapsed.")).
-                Add(new Sentence("OK, is he breathing?")).
-                Add(new Sentence("No, he's not.")).
-                Add(new Sentence("OK, is he conscious?")).
-                Add(new Sentence("No.")).
-                Add(new Sentence("Tell me what happened.")).
-                Add(new Sentence("He was working in the garden and then suddenly collapsed.")).
-                Add(new Sentence("OK, I'm organising help for you now.")).
+                Add(new Audio("https://s3-eu-west-1.amazonaws.com/nine-nine-nine/C1_Demo/C1_Demo_Handler_WhatHappened.mp3")).
+                Add(new Audio("https://s3-eu-west-1.amazonaws.com/nine-nine-nine/C1_Demo/C1_Demo_Caller_WhatHappened.mp3")).
+                Add(new Audio("https://s3-eu-west-1.amazonaws.com/nine-nine-nine/C1_Demo/C1_Demo_Handler_Breathing.mp3")).
+                Add(new Audio("https://s3-eu-west-1.amazonaws.com/nine-nine-nine/C1_Demo/C1_Demo_Caller_Breathing.mp3")).
+                Add(new Audio("https://s3-eu-west-1.amazonaws.com/nine-nine-nine/C1_Demo/C1_Demo_Handler_Conscious.mp3")).
+                Add(new Audio("https://s3-eu-west-1.amazonaws.com/nine-nine-nine/C1_Demo/C1_Demo_Caller_Conscious.mp3")).
+                Add(new Audio("https://s3-eu-west-1.amazonaws.com/nine-nine-nine/C1_Demo/C1_Demo_Handler_EndCall.mp3")).
                 Add(new Break() { Time = "1s" }).
-                Add(new Sentence("Now it's your turn!")).
-                Add(new Sentence("Don't worry, you will be doing a practice run with me first.")).
-                Add(new Sentence("When you're ready, say Hello nine nine nine."))),
+                Add(new Audio("https://s3-eu-west-1.amazonaws.com/nine-nine-nine/C1_Demo/C1_Demo_Handler_EndDemo.mp3"))),
+            // 3
             new SpeechNode(4, new SpeechBuilder().
-                Add(new Sentence("Quit messing around.  Listen carefully.")).
+                Add(new Audio("https://s3-eu-west-1.amazonaws.com/nine-nine-nine/C1_Demo/C1_Demo_Handler_Ready_No.mp3")).
                 Add(new Break() { Time = "1s" }).
-                Add(new Sentence("Hello, my husband has collapsed.")).
-                Add(new Sentence("OK, is he breathing?")).
-                Add(new Sentence("No, he's not.")).
-                Add(new Sentence("OK, is he conscious?")).
-                Add(new Sentence("No.")).
-                Add(new Sentence("Tell me what happened.")).
-                Add(new Sentence("He was working in the garden and then suddenly collapsed.")).
-                Add(new Sentence("OK, I'm organising help for you now.")).
+                Add(new Audio("https://s3-eu-west-1.amazonaws.com/nine-nine-nine/C1_Demo/C1_Demo_Handler_WhatHappened.mp3")).
+                Add(new Audio("https://s3-eu-west-1.amazonaws.com/nine-nine-nine/C1_Demo/C1_Demo_Caller_WhatHappened.mp3")).
+                Add(new Audio("https://s3-eu-west-1.amazonaws.com/nine-nine-nine/C1_Demo/C1_Demo_Handler_Breathing.mp3")).
+                Add(new Audio("https://s3-eu-west-1.amazonaws.com/nine-nine-nine/C1_Demo/C1_Demo_Caller_Breathing.mp3")).
+                Add(new Audio("https://s3-eu-west-1.amazonaws.com/nine-nine-nine/C1_Demo/C1_Demo_Handler_Conscious.mp3")).
+                Add(new Audio("https://s3-eu-west-1.amazonaws.com/nine-nine-nine/C1_Demo/C1_Demo_Caller_Conscious.mp3")).
+                Add(new Audio("https://s3-eu-west-1.amazonaws.com/nine-nine-nine/C1_Demo/C1_Demo_Handler_EndCall.mp3")).
                 Add(new Break() { Time = "1s" }).
-                Add(new Sentence("Now it's your turn!")).
-                Add(new Sentence("Don't worry, you will be doing a practice run with me first.")).
-                Add(new Sentence("When you're ready, say Hello nine nine nine."))),
-            new CheckNextIntentNode(5, Intents.StartCallIntentName, "C1Tutorial_StartCall_Correct"),
-            new SpeechNode(6, new SpeechBuilder().Add(new Sentence("My son has stopped moving."))),
-            new CheckNextIntentNode(7, Intents.IsBreathingQuestionIntentName, "C1Tutorial_IsBreathing_Correct"),
-            new SpeechNode(8, new SpeechBuilder().Add(new Sentence("No he's not breathing."))),
-            new CheckNextIntentNode(9, Intents.IsConsciousQuestionIntentName, "C1Tutorial_IsConscious_Correct"),
-            new SpeechNode(10, new SpeechBuilder().Add(new Sentence("No he's just lying there not moving."))),
-            new CheckNextIntentNode(11, Intents.WhatHappenedQuestionIntentName, "C1Tutorial_WhatHappened_Correct"),
-            new SpeechNode(12, new SpeechBuilder().Add(new Sentence("It must be something he ate.  We were having dinner, but all of a sudden he just collapsed."))),
-            new CheckNextIntentNode(13, Intents.EndCallQuestionIntentName, "C1Tutorial_EndCall_Correct"),
-            new SpeechNode(14, new SpeechBuilder().Add(new Sentence("Great job!"))),
+                Add(new Audio("https://s3-eu-west-1.amazonaws.com/nine-nine-nine/C1_Demo/C1_Demo_Handler_EndDemo.mp3"))),
+            // 4
+            new CheckNextIntentNode(5, Intents.StartCallIntentName, 6, "C1Tutorial_StartCall_Correct"),
+            // 5
+            new SpeechNode(7, new SpeechBuilder().
+                Add(new Audio("https://s3-eu-west-1.amazonaws.com/nine-nine-nine/C1_Tutorial/C1_Tutorial_Handler_WhatHappened_Correct.mp3"))),
+            // 6
+            new SpeechNode(4, new SpeechBuilder().
+                Add(new Audio("https://s3-eu-west-1.amazonaws.com/nine-nine-nine/C1_Tutorial/C1_Tutorial_Handler_WhatHappened_Incorrect.mp3"))),
+            // 7
+            new CheckNextIntentNode(8, Intents.IsBreathingQuestionIntentName, 9, "C1Tutorial_IsBreathing_Correct"),
+            // 8
+            new SpeechNode(10, new SpeechBuilder().
+                Add(new Audio("https://s3-eu-west-1.amazonaws.com/nine-nine-nine/C1_Tutorial/C1_Tutorial_Handler_Breathing_Correct.mp3"))),
+            // 9
+            new SpeechNode(7, new SpeechBuilder().
+                Add(new Audio("https://s3-eu-west-1.amazonaws.com/nine-nine-nine/C1_Tutorial/C1_Tutorial_Handler_Breathing_Incorrect.mp3"))),
+            // 10
+            new CheckNextIntentNode(11, Intents.IsConsciousQuestionIntentName, 12, "C1Tutorial_IsConscious_Correct"),
+            // 11
+            new SpeechNode(13, new SpeechBuilder().
+                Add(new Audio("https://s3-eu-west-1.amazonaws.com/nine-nine-nine/C1_Tutorial/C1_Tutorial_Handler_Conscious_Correct.mp3"))),
+            // 12
+            new SpeechNode(10, new SpeechBuilder().
+                Add(new Audio("https://s3-eu-west-1.amazonaws.com/nine-nine-nine/C1_Tutorial/C1_Tutorial_Handler_Conscious_Incorrect.mp3"))),
+            // 13
+            new CheckNextIntentNode(14, Intents.EndCallQuestionIntentName, 15, "C1Tutorial_EndCall_Correct"),
+            // 14
+            new SpeechNode(14, new SpeechBuilder().
+                Add(new Audio("https://s3-eu-west-1.amazonaws.com/nine-nine-nine/C1_Tutorial/C1_Tutorial_Handler_EndCall_Correct.mp3"))),
+            // 15
+            new SpeechNode(13, new SpeechBuilder().
+                Add(new Audio("https://s3-eu-west-1.amazonaws.com/nine-nine-nine/C1_Tutorial/C1_Tutorial_Handler_EndCall_Incorrect.mp3"))),
         };
 
         #endregion

@@ -33,7 +33,6 @@ namespace EmergencyResponderGame.RequestHandlers
             Intents.StartCallIntentName,
             Intents.IsBreathingQuestionIntentName,
             Intents.IsConsciousQuestionIntentName,
-            Intents.WhatHappenedQuestionIntentName,
             Intents.EndCallQuestionIntentName,
         };
 

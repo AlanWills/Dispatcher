@@ -18,16 +18,22 @@ namespace EmergencyResponderGame.StorySystem.Nodes
         public string IntentName { get; }
 
         /// <summary>
+        /// The index of the node which we will progress to if the intent we are checking is not the one we are waiting for.
+        /// </summary>
+        public int IncorrectIntentNextNodeIndex { get; }
+
+        /// <summary>
         /// The value we will store in the session attributes to track if the user successfully triggered the correct intent.
         /// </summary>
         public string ParameterName { get; }
 
         #endregion
 
-        public CheckNextIntentNode(int nextNodeIndex, string intentName, string parameterName) : 
+        public CheckNextIntentNode(int nextNodeIndex, string intentName, int incorrectIntentNextNodeIndex, string parameterName) : 
             base(nextNodeIndex)
         {
             IntentName = intentName;
+            IncorrectIntentNextNodeIndex = incorrectIntentNextNodeIndex;
             ParameterName = parameterName;
         }
 
@@ -35,6 +41,18 @@ namespace EmergencyResponderGame.StorySystem.Nodes
         {
             base.ModifySessionAttributes(attributes, intent, session, lambdaContext);
             attributes.Add(ParameterName, IntentName == intent.Name);
+        }
+
+        public override BaseNode GetNextNode(Intent intent, Session session, ILambdaContext lambdaContext)
+        {
+            if (intent.Name == IntentName)
+            {
+                return base.GetNextNode(intent, session, lambdaContext);
+            }
+            else
+            {
+                return Story.Nodes[IncorrectIntentNextNodeIndex];
+            }
         }
     }
 }

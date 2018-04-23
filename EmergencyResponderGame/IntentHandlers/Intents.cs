@@ -50,12 +50,7 @@ namespace EmergencyResponderGame
         /// The name of the IsConsciousQuestion intent on AWS lambda.
         /// </summary>
         public const string IsConsciousQuestionIntentName = "IsConsciousQuestionIntent";
-
-        /// <summary>
-        /// The name of the WhatHappenedQuestion intent on AWS lambda.
-        /// </summary>
-        public const string WhatHappenedQuestionIntentName = "WhatHappenedQuestionIntent";
-
+        
         /// <summary>
         /// The name of the EndCallQuestion intent on AWS lambda.
         /// </summary>

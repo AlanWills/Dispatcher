@@ -32,7 +32,7 @@ namespace EmergencyResponderGame.RequestHandlers
         public override SkillResponse HandleRequest(SkillRequest request, ILambdaContext lambdaContext)
         {
             Speech speech = new Speech();
-            speech.Elements.Add(new Sentence("Welcome.  Say Start the game to begin."));
+            speech.Elements.Add(new Audio("https://s3-eu-west-1.amazonaws.com/nine-nine-nine/General/LaunchMessage.mp3"));
 
             SkillResponse response = ResponseBuilder.Tell(speech);
             response.Response.ShouldEndSession = false;
