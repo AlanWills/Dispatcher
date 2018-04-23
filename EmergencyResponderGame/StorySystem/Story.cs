@@ -34,13 +34,13 @@ namespace EmergencyResponderGame.StorySystem
                 Add(new Break() { Time = "1s" }).
                 Add(new Audio("https://s3-eu-west-1.amazonaws.com/nine-nine-nine/C1_Demo/C1_Demo_Handler_WhatHappened.mp3")).
                 Add(new Audio("https://s3-eu-west-1.amazonaws.com/nine-nine-nine/C1_Demo/C1_Demo_Caller_WhatHappened.mp3")).
-                Add(new Audio("https://s3-eu-west-1.amazonaws.com/nine-nine-nine/C1_Demo/C1_Demo_Handler_Breathing.mp3")).
-                Add(new Audio("https://s3-eu-west-1.amazonaws.com/nine-nine-nine/C1_Demo/C1_Demo_Caller_Breathing.mp3")).
-                Add(new Audio("https://s3-eu-west-1.amazonaws.com/nine-nine-nine/C1_Demo/C1_Demo_Handler_Conscious.mp3")).
-                Add(new Audio("https://s3-eu-west-1.amazonaws.com/nine-nine-nine/C1_Demo/C1_Demo_Caller_Conscious.mp3")).
-                Add(new Audio("https://s3-eu-west-1.amazonaws.com/nine-nine-nine/C1_Demo/C1_Demo_Handler_EndCall.mp3")).
-                Add(new Break() { Time = "1s" }).
-                Add(new Audio("https://s3-eu-west-1.amazonaws.com/nine-nine-nine/C1_Demo/C1_Demo_Handler_EndDemo.mp3"))),
+                Add(new Audio("https://s3-eu-west-1.amazonaws.com/nine-nine-nine/C1_Demo/C1_Demo_Handler_Breathing.mp3"))),
+                //Add(new Audio("https://s3-eu-west-1.amazonaws.com/nine-nine-nine/C1_Demo/C1_Demo_Caller_Breathing.mp3")).
+                //Add(new Audio("https://s3-eu-west-1.amazonaws.com/nine-nine-nine/C1_Demo/C1_Demo_Handler_Conscious.mp3")).
+                //Add(new Audio("https://s3-eu-west-1.amazonaws.com/nine-nine-nine/C1_Demo/C1_Demo_Caller_Conscious.mp3")).
+                //Add(new Audio("https://s3-eu-west-1.amazonaws.com/nine-nine-nine/C1_Demo/C1_Demo_Handler_EndCall.mp3")).
+                //Add(new Break() { Time = "1s" }).
+                //Add(new Audio("https://s3-eu-west-1.amazonaws.com/nine-nine-nine/C1_Demo/C1_Demo_Handler_EndDemo.mp3"))),
             // 3
             new SpeechNode(4, new SpeechBuilder().
                 Add(new Audio("https://s3-eu-west-1.amazonaws.com/nine-nine-nine/C1_Demo/C1_Demo_Handler_Ready_No.mp3")).
@@ -98,27 +98,75 @@ namespace EmergencyResponderGame.StorySystem
             return Nodes[currentNodeIndex];
         }
 
+        public static SkillResponse StartGame(Intent intent, Session session, ILambdaContext lambdaContext)
+        {
+            BaseNode node = Nodes[0];
+            Dictionary<string, object> responseSessionAttributes = session.Attributes ?? new Dictionary<string, object>();
+
+            while (node != null && !(node is SpeechNode))
+            {
+                node.ModifySessionAttributes(session.Attributes, intent, session, lambdaContext);
+                node = node.GetNextNode(intent, session, lambdaContext);
+            }
+            
+            SpeechNode speechNode = node as SpeechNode;
+            lambdaContext.Logger.LogLine("Speech Node element count " + speechNode.Speech.Elements.Count);
+
+            SkillResponse response = speechNode != null ? ResponseBuilder.Tell(speechNode.Speech) : ResponseBuilder.Empty();
+            response.Response.ShouldEndSession = speechNode == null;
+
+            // Update the record of the current node we are on
+            response.SessionAttributes = responseSessionAttributes;
+
+            long nextIndex = speechNode != null ? speechNode.NextNodeIndex : -1;
+            lambdaContext.Logger.LogLine("Next Index: " + nextIndex);
+
+            if (!responseSessionAttributes.ContainsKey(CurrentNodeIndexKey))
+            {
+                response.SessionAttributes.Add(CurrentNodeIndexKey, nextIndex);
+            }
+            else
+            {
+                response.SessionAttributes[CurrentNodeIndexKey] = nextIndex;
+            }
+
+            return response;
+        }
+
         public static SkillResponse CreateResponse(Intent intent, Session session, ILambdaContext lambdaContext)
         {
-            BaseNode currentNode = GetCurrentNode(session);
-            BaseNode nextNode = currentNode.GetNextNode(intent, session, lambdaContext);
+            BaseNode node = GetCurrentNode(session);
+            BaseNode nextNode = node.GetNextNode(intent, session ,lambdaContext);
 
             Dictionary<string, object> responseSessionAttributes = session.Attributes ?? new Dictionary<string, object>();
 
             while (nextNode != null && !(nextNode is SpeechNode))
             {
-                nextNode.ModifySessionAttributes(responseSessionAttributes, intent, session, lambdaContext);
+                nextNode.ModifySessionAttributes(session.Attributes, intent, session, lambdaContext);
                 nextNode = nextNode.GetNextNode(intent, session, lambdaContext);
             }
-
+            
             SpeechNode speechNode = nextNode as SpeechNode;
+            lambdaContext.Logger.LogLine("Speech Node element count " + speechNode.Speech.Elements.Count);
+
             SkillResponse response = speechNode != null ? ResponseBuilder.Tell(speechNode.Speech) : ResponseBuilder.Empty();
             response.Response.ShouldEndSession = speechNode == null;
-            
+
             // Update the record of the current node we are on
             response.SessionAttributes = responseSessionAttributes;
-            response.SessionAttributes.Add(CurrentNodeIndexKey, speechNode != null ? speechNode.NextNodeIndex : -1);
-            
+
+            long nextIndex = speechNode != null ? speechNode.NextNodeIndex : -1;
+            lambdaContext.Logger.LogLine("Next Index: " + nextIndex);
+
+            if (!responseSessionAttributes.ContainsKey(CurrentNodeIndexKey))
+            {
+                response.SessionAttributes.Add(CurrentNodeIndexKey, nextIndex);
+            }
+            else
+            {
+                response.SessionAttributes[CurrentNodeIndexKey] = nextIndex;
+            }
+
             return response;
         }
 

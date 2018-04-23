@@ -19,15 +19,17 @@ namespace EmergencyResponderGame.RequestHandlers
         /// <summary>
         /// A list of custom intent handlers we will check first when processing an intent.
         /// </summary>
-        private static List<IntentHandler> CustomIntentHandlers { get; set; } = new List<IntentHandler>();
+        private static List<IntentHandler> CustomIntentHandlers { get; set; } = new List<IntentHandler>()
+        {
+            new PlayGameIntentHandler(),
+            new StartFromNodeIntentHandler()
+        };
 
         /// <summary>
         /// All of the currently supported intents.
         /// </summary>
         private static List<string> SupportedIntents { get; set; } = new List<string>()
         {
-            Intents.PlayGameIntentName,
-            Intents.StartFromNodeIntentName,
             Intents.YesIntentName,
             Intents.NoIntentName,
             Intents.StartCallIntentName,
