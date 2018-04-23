@@ -35,6 +35,9 @@ namespace EmergencyResponderGame.StorySystem
                 Add(new Audio("https://s3-eu-west-1.amazonaws.com/nine-nine-nine/C1_Demo/C1_Demo_Handler_WhatHappened.mp3")).
                 Add(new Audio("https://s3-eu-west-1.amazonaws.com/nine-nine-nine/C1_Demo/C1_Demo_Caller_WhatHappened.mp3")).
                 Add(new Audio("https://s3-eu-west-1.amazonaws.com/nine-nine-nine/C1_Demo/C1_Demo_Handler_Breathing.mp3"))),
+
+                // NOT ALLOWED MORE THAN FIVE.  ARGH
+                // Concatenate the actual call into one using FFMPEG
                 //Add(new Audio("https://s3-eu-west-1.amazonaws.com/nine-nine-nine/C1_Demo/C1_Demo_Caller_Breathing.mp3")).
                 //Add(new Audio("https://s3-eu-west-1.amazonaws.com/nine-nine-nine/C1_Demo/C1_Demo_Handler_Conscious.mp3")).
                 //Add(new Audio("https://s3-eu-west-1.amazonaws.com/nine-nine-nine/C1_Demo/C1_Demo_Caller_Conscious.mp3")).
@@ -97,10 +100,22 @@ namespace EmergencyResponderGame.StorySystem
             int currentNodeIndex = session.GetCurrentNodeIndex();
             return Nodes[currentNodeIndex];
         }
-
-        public static SkillResponse StartGame(Intent intent, Session session, ILambdaContext lambdaContext)
+        
+        public static SkillResponse CreateResponse(Intent intent, Session session, ILambdaContext lambdaContext)
         {
-            BaseNode node = Nodes[0];
+            BaseNode node = GetCurrentNode(session);
+            BaseNode nextNode = node.GetNextNode(intent, session ,lambdaContext);
+
+            return CreateResponseForNode(nextNode, intent, session, lambdaContext);
+        }
+
+        public static SkillResponse CreateResponseForNode(long nodeIndex, Intent intent, Session session, ILambdaContext lambdaContext)
+        {
+            return CreateResponseForNode(Nodes[(int)nodeIndex], intent, session, lambdaContext);
+        }
+
+        public static SkillResponse CreateResponseForNode(BaseNode node, Intent intent, Session session, ILambdaContext lambdaContext)
+        {
             Dictionary<string, object> responseSessionAttributes = session.Attributes ?? new Dictionary<string, object>();
 
             while (node != null && !(node is SpeechNode))
@@ -108,45 +123,8 @@ namespace EmergencyResponderGame.StorySystem
                 node.ModifySessionAttributes(session.Attributes, intent, session, lambdaContext);
                 node = node.GetNextNode(intent, session, lambdaContext);
             }
-            
+
             SpeechNode speechNode = node as SpeechNode;
-            lambdaContext.Logger.LogLine("Speech Node element count " + speechNode.Speech.Elements.Count);
-
-            SkillResponse response = speechNode != null ? ResponseBuilder.Tell(speechNode.Speech) : ResponseBuilder.Empty();
-            response.Response.ShouldEndSession = speechNode == null;
-
-            // Update the record of the current node we are on
-            response.SessionAttributes = responseSessionAttributes;
-
-            long nextIndex = speechNode != null ? speechNode.NextNodeIndex : -1;
-            lambdaContext.Logger.LogLine("Next Index: " + nextIndex);
-
-            if (!responseSessionAttributes.ContainsKey(CurrentNodeIndexKey))
-            {
-                response.SessionAttributes.Add(CurrentNodeIndexKey, nextIndex);
-            }
-            else
-            {
-                response.SessionAttributes[CurrentNodeIndexKey] = nextIndex;
-            }
-
-            return response;
-        }
-
-        public static SkillResponse CreateResponse(Intent intent, Session session, ILambdaContext lambdaContext)
-        {
-            BaseNode node = GetCurrentNode(session);
-            BaseNode nextNode = node.GetNextNode(intent, session ,lambdaContext);
-
-            Dictionary<string, object> responseSessionAttributes = session.Attributes ?? new Dictionary<string, object>();
-
-            while (nextNode != null && !(nextNode is SpeechNode))
-            {
-                nextNode.ModifySessionAttributes(session.Attributes, intent, session, lambdaContext);
-                nextNode = nextNode.GetNextNode(intent, session, lambdaContext);
-            }
-            
-            SpeechNode speechNode = nextNode as SpeechNode;
             lambdaContext.Logger.LogLine("Speech Node element count " + speechNode.Speech.Elements.Count);
 
             SkillResponse response = speechNode != null ? ResponseBuilder.Tell(speechNode.Speech) : ResponseBuilder.Empty();

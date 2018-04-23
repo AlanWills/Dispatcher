@@ -34,7 +34,7 @@ namespace EmergencyResponderGame.IntentHandlers
         /// <returns></returns>
         public override SkillResponse HandleIntent(Intent intent, Session session, ILambdaContext lambdaContext)
         {
-            return Story.StartGame(intent, session, lambdaContext);
+            return Story.CreateResponseForNode(0, intent, session, lambdaContext);
         }
 
         #endregion

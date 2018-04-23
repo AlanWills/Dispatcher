@@ -29,8 +29,7 @@ namespace EmergencyResponderGame.IntentHandlers
         public override SkillResponse HandleIntent(Intent intent, Session session, ILambdaContext lambdaContext)
         {
             long nodeIndex = long.Parse(intent.Slots["NodeIndex"].Value);
-            //return Story.CreateResponseForNode(nodeIndex, intent, session, lambdaContext);
-            return ResponseBuilder.Empty();
+            return Story.CreateResponseForNode(nodeIndex, intent, session, lambdaContext);
         }
     }
 }
