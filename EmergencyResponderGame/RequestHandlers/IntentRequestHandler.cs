@@ -35,7 +35,7 @@ namespace EmergencyResponderGame.RequestHandlers
             Intents.StartCallIntentName,
             Intents.IsBreathingQuestionIntentName,
             Intents.IsConsciousQuestionIntentName,
-            Intents.EndCallQuestionIntentName,
+            Intents.EndCallIntentName,
         };
 
         #endregion
