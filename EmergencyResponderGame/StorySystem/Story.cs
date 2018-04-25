@@ -182,10 +182,22 @@ namespace EmergencyResponderGame.StorySystem
             new CheckNextIntentNode(37, Intents.IsConsciousQuestionIntentName, 38, "C2_Tutorial_Conscious_Correct"),
             // 37 - C2 Tutorial, Conscious Correct
             new SpeechNode(39, new SpeechBuilder().
-                Add(new Sentence("She's thrashing around a lot and isn't responding to me."))),
+                Add(new Sentence("She's thrashing around a lot and isn't responding to anything I'm saying."))),
             // 38 - C2 Tutorial, Conscious Incorrect
             new SpeechNode(39, new SpeechBuilder().
                 Add(new Sentence("Checking a patient's consciousness is always the next step after their breathing.  Try again."))),
+            // 39 - C2 Tutorial, Smile
+            new CheckNextIntentNode(40, Intents.CanSmileQuestionIntentName, 41, "C2_Tutorial_Smile_Correct"),
+            // 40 - C2 Tutorial, Smile Correct
+            new SpeechNode(42, new SpeechBuilder().
+                Add(new Sentence("I don't think she can understand or hear anything I'm saying."))),
+            // 41 - C2 Tutorial, Smile Incorrect
+            new SpeechNode(42, new SpeechBuilder().
+                Add(new Sentence("In this case, it doesn't seem like a stroke, but checking facial movement is a really essential test for C2 calls.  Ask me whether the patient can smile."))),
+            // 42 - C2 Tutorial, Smile
+
+            // Now we need to start to be able to handle multiple intents
+            new CheckNextIntentNode(40, Intents.CanSmileQuestionIntentName, 41, "C2_Tutorial_Smile_Correct"),
 
             // Have a bit in the tutorial where the handler starts pointing out some of your questions are a bit unnecessary
             // I.e. if the person follows the example, at a certain point the handler will say 'Yep, but you don't really need to ask this in this case'
@@ -197,6 +209,9 @@ namespace EmergencyResponderGame.StorySystem
             // Before/After the player starts a proper C2 call, just point out to them that they will need to start to realise what is a C1 and what is a C2
             // and organise help at the appropriate point in the call - i.e. don't ask unnecessary questions
             // Also need to check for organising help too early
+
+            // Need to handle valid questions but in the wrong order - people should still answer correctly?
+            // If we keep the responses to incorrect questions general then maybe it will still make sense?
         };
 
         #endregion
