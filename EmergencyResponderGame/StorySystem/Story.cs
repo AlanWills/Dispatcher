@@ -197,7 +197,7 @@ namespace EmergencyResponderGame.StorySystem
             // 42 - C2 Tutorial, Smile
 
             // Now we need to start to be able to handle multiple intents
-            new CheckNextIntentNode(40, Intents.CanSmileQuestionIntentName, 41, "C2_Tutorial_Smile_Correct"),
+            new CheckNextIntentNode(40, Intents.CanRaiseArmsQuestionIntentName, 41, "C2_Tutorial_Smile_Correct"),
 
             // Have a bit in the tutorial where the handler starts pointing out some of your questions are a bit unnecessary
             // I.e. if the person follows the example, at a certain point the handler will say 'Yep, but you don't really need to ask this in this case'

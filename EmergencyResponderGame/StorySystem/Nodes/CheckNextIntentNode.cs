@@ -12,10 +12,7 @@ namespace EmergencyResponderGame.StorySystem.Nodes
     {
         #region Properties and Fields
         
-        /// <summary>
-        /// The name of the intent handler we are wanting this node to be processed by.
-        /// </summary>
-        public string IntentName { get; }
+        public Dictionary<string, int> ValidIntents { get; }
 
         /// <summary>
         /// The index of the node which we will progress to if the intent we are checking is not the one we are waiting for.
@@ -29,30 +26,46 @@ namespace EmergencyResponderGame.StorySystem.Nodes
 
         #endregion
 
+        #region Constructors
+
         public CheckNextIntentNode(int nextNodeIndex, string intentName, int incorrectIntentNextNodeIndex, string parameterName) : 
             base(nextNodeIndex)
         {
-            IntentName = intentName;
+            ValidIntents = new Dictionary<string, int>() { { intentName, nextNodeIndex } };
             IncorrectIntentNextNodeIndex = incorrectIntentNextNodeIndex;
             ParameterName = parameterName;
         }
 
+        public CheckNextIntentNode(Dictionary<string, int> possibleValidIntents, int incorrectIntentNextNodeIndex, string parameterName) :
+            base(incorrectIntentNextNodeIndex)
+        {
+            ValidIntents = possibleValidIntents;
+            IncorrectIntentNextNodeIndex = incorrectIntentNextNodeIndex;
+            ParameterName = parameterName;
+        }
+
+        #endregion
+
+        #region Base Node Overrides
+
         public override void ModifySessionAttributes(Dictionary<string, object> attributes, Intent intent, Session session, ILambdaContext lambdaContext)
         {
             base.ModifySessionAttributes(attributes, intent, session, lambdaContext);
-            attributes.Add(ParameterName, IntentName == intent.Name);
+            attributes.Add(ParameterName, ValidIntents.ContainsKey(intent.Name));
         }
 
         public override BaseNode GetNextNode(Intent intent, Session session, ILambdaContext lambdaContext)
         {
-            if (intent.Name == IntentName)
+            if (ValidIntents.ContainsKey(intent.Name))
             {
-                return base.GetNextNode(intent, session, lambdaContext);
+                return Story.Nodes[ValidIntents[intent.Name]];
             }
             else
             {
                 return Story.Nodes[IncorrectIntentNextNodeIndex];
             }
         }
+
+        #endregion
     }
 }
