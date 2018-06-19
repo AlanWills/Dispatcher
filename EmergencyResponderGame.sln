@@ -15,13 +15,21 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CelesteEngineEditor", "Real
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CelesteEngineEditorLibrary", "RealTalkEngine\CelesteEngine\CelesteEngineEditorLibrary\CelesteEngineEditorLibrary.csproj", "{B2B41924-FF3D-451F-8A37-7B078053E910}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RealTalkEngine", "RealTalkEngine\RealTalkEngine\RealTalkEngine.csproj", "{22508ABB-DE46-479D-933D-0B546364A044}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RealTalkEngine", "RealTalkEngine\RealTalkEngine\RealTalkEngine.csproj", "{22508ABB-DE46-479D-933D-0B546364A044}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RealTalkEngineEditorLibrary", "RealTalkEngine\RealTalkEngineEditorLibrary\RealTalkEngineEditorLibrary.csproj", "{971C1874-3B1C-44DE-8D16-4F6FA807ACC0}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Real Talk Engine", "Real Talk Engine", "{975B78B3-7C42-472A-AF8C-8BD17A4501A4}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RealTalkEngineRetargeted", "RealTalkEngine\RealTalkEngineRetargeted\RealTalkEngineRetargeted.csproj", "{F5EC2F3E-9368-4F63-9CA6-0B0120589E93}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dispatcher", "Dispatcher\Dispatcher.csproj", "{E7C0D913-19E8-469E-85B3-5EA72F98E438}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dispatcher.Tests", "Dispatcher.Tests\Dispatcher.Tests.csproj", "{69522ABD-5467-47B1-8831-27DAE5426968}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AudioFormatter", "RealTalkEngine\AudioFormatter\AudioFormatter.csproj", "{211E8F63-151E-4ECF-8761-138A3171B078}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AudioConstsGenerator", "RealTalkEngine\AudioConstsGenerator\AudioConstsGenerator.csproj", "{B0BF83FE-FFFE-4C8F-B43F-54E5551E35AA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -57,6 +65,22 @@ Global
 		{F5EC2F3E-9368-4F63-9CA6-0B0120589E93}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F5EC2F3E-9368-4F63-9CA6-0B0120589E93}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F5EC2F3E-9368-4F63-9CA6-0B0120589E93}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E7C0D913-19E8-469E-85B3-5EA72F98E438}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E7C0D913-19E8-469E-85B3-5EA72F98E438}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E7C0D913-19E8-469E-85B3-5EA72F98E438}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E7C0D913-19E8-469E-85B3-5EA72F98E438}.Release|Any CPU.Build.0 = Release|Any CPU
+		{69522ABD-5467-47B1-8831-27DAE5426968}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{69522ABD-5467-47B1-8831-27DAE5426968}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{69522ABD-5467-47B1-8831-27DAE5426968}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{69522ABD-5467-47B1-8831-27DAE5426968}.Release|Any CPU.Build.0 = Release|Any CPU
+		{211E8F63-151E-4ECF-8761-138A3171B078}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{211E8F63-151E-4ECF-8761-138A3171B078}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{211E8F63-151E-4ECF-8761-138A3171B078}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{211E8F63-151E-4ECF-8761-138A3171B078}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B0BF83FE-FFFE-4C8F-B43F-54E5551E35AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B0BF83FE-FFFE-4C8F-B43F-54E5551E35AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B0BF83FE-FFFE-4C8F-B43F-54E5551E35AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B0BF83FE-FFFE-4C8F-B43F-54E5551E35AA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -68,6 +92,8 @@ Global
 		{22508ABB-DE46-479D-933D-0B546364A044} = {975B78B3-7C42-472A-AF8C-8BD17A4501A4}
 		{971C1874-3B1C-44DE-8D16-4F6FA807ACC0} = {975B78B3-7C42-472A-AF8C-8BD17A4501A4}
 		{F5EC2F3E-9368-4F63-9CA6-0B0120589E93} = {975B78B3-7C42-472A-AF8C-8BD17A4501A4}
+		{211E8F63-151E-4ECF-8761-138A3171B078} = {975B78B3-7C42-472A-AF8C-8BD17A4501A4}
+		{B0BF83FE-FFFE-4C8F-B43F-54E5551E35AA} = {975B78B3-7C42-472A-AF8C-8BD17A4501A4}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F4ED31B5-BFC1-4D90-9076-AEA45386A433}
