@@ -16,7 +16,7 @@ namespace Dispatcher.StorySystem.Nodes
         public int NextNodeIndex { get; }
 
         #endregion
-
+        
         public BaseNode(int nextNodeIndex)
         {
             NextNodeIndex = nextNodeIndex;

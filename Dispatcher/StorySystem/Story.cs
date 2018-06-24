@@ -66,8 +66,8 @@ namespace Dispatcher.StorySystem
             // 13 - Dispatcher Corridor Caller With Partner
             new SpeechNode(14, new SpeechBuilder().
                 Add(new Audio(Dispatcher_Corridor_Caller_With_Partner)).
-                Add(new Audio(Player_Tell_Me_Whats_Happened_Correct)).
-                Add(new Audio(Dispatcher_Interrupts_For_Information))),
+                Add(new Audio(Player_Caller_With_Partner_Correct)).
+                Add(new Audio(Dispatcher_Interrupts_Caller_Again))),
             // 14 - How many weeks pregnant/How old is the mother
             new CheckNextIntentNode(new Dictionary<string, int>()
             {
@@ -88,7 +88,7 @@ namespace Dispatcher.StorySystem
                 Add(new Audio(Dispatcher_Prompts_To_Ask_Mothers_Age_Weeks_Pregnant_Branch))),
             // 19 - How old is mum?
             new CheckNextIntentNode(17, HowOldIsMotherIntent, 20, "HowOldIsMother_Correct"),
-            // 20 - Dispatcher Corridor Mothers Age (Weeks Pregnant Branch)
+            // 20 - Dispatcher Corridor Asks Mothers Age (Weeks Pregnant Branch)
             new SpeechNode(30, new SpeechBuilder().
                 Add(new Audio(Dispatcher_Corridor_Mothers_Age_Weeks_Pregnant_Branch)).
                 Add(new Audio(Player_Asks_How_Many_Weeks_Pregnant_Weeks_Pregnant_Branch)).
@@ -98,7 +98,7 @@ namespace Dispatcher.StorySystem
                 Add(new Audio(Player_Asks_Mothers_age_Age_Branch))),
             // 22 - How many weeks pregnant?
             new CheckNextIntentNode(23, HowManyWeeksPregnantIntent, 24, "HowManyWeeksPregnant_Correct"),
-            // 23 - Player Asks Mothers Age (Age Branch)
+            // 23 - Player AsksHow Many Weeks Pregnant (Age Branch)
             new SpeechNode(30, new SpeechBuilder().
                 Add(new Audio(Player_Asks_How_Many_Weeks_Pregnant_Age_Branch)).
                 Add(new Audio(Dispatcher_Where_Are_They_Now_Question))),
@@ -118,7 +118,7 @@ namespace Dispatcher.StorySystem
             // 28 - How old is mum?
             new CheckNextIntentNode(23, HowOldIsMotherIntent, 29, "HowOldIsMother_Correct"),
             // 29 - Dispatcher Corridor Asks Mothers Age
-            new SpeechNode(23, new SpeechBuilder().
+            new SpeechNode(25, new SpeechBuilder().
                 Add(new Audio(Dispatcher_Corridor_Asks_Mothers_Age)).
                 Add(new Audio(Player_Asks_Mothers_age_Age_Branch))),
             // 30 - Where are they now?
@@ -129,7 +129,7 @@ namespace Dispatcher.StorySystem
                 Add(new Audio(Dispatcher_Can_We_See_Baby_Question))),
             // 32 - Player Where Are They Now Incorrect
             new SpeechNode(33, new SpeechBuilder().
-                Add(new Audio(Player_Where_Are_They_Now_Correct)).
+                Add(new Audio(Player_Where_Are_They_Now_Incorrect)).
                 Add(new Audio(Dispatcher_Can_We_See_Baby_Question))),
             // 33 - Is any of the baby visible?
             new CheckNextIntentNode(34, IsBabyVisibleIntent, 35, "IsBabyVisible_Correct"),
