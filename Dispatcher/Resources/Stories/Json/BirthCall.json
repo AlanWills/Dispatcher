@@ -1,0 +1,1030 @@
+﻿{
+  "passages": [
+    {
+      "text": "Phone Rings.\n\nRight, first phone call.  Are you ready?\n[[Yes|Player Ready Yes]]\n[[Something else|Player Ready No]]",
+      "links": [
+        {
+          "name": "Yes|Player Ready Yes",
+          "link": "Yes|Player Ready Yes"
+        },
+        {
+          "name": "Something else|Player Ready No",
+          "link": "Something else|Player Ready No"
+        }
+      ],
+      "name": "Dispatcher Ready Question",
+      "pid": "1",
+      "position": {
+        "x": "673",
+        "y": "82"
+      }
+    },
+    {
+      "text": "Great, when you're ready to answer say Ambulance Emergency, tell me exactly what's happened.\n[[AA Emergency, tell me what's happened|Player Tell Me Whats Happened Correct]]\n[[Something else|Player Tell Me Whats Happened Incorrect]]",
+      "links": [
+        {
+          "name": "AA Emergency, tell me what's happened|Player Tell Me Whats Happened Correct",
+          "link": "AA Emergency, tell me what's happened|Player Tell Me Whats Happened Correct"
+        },
+        {
+          "name": "Something else|Player Tell Me Whats Happened Incorrect",
+          "link": "Something else|Player Tell Me Whats Happened Incorrect"
+        }
+      ],
+      "name": "Player Ready Yes",
+      "pid": "2",
+      "position": {
+        "x": "598",
+        "y": "232"
+      }
+    },
+    {
+      "text": "Ok, gather your thoughts.  When you're ready say Ambulance Emergency, tell me exactly what's happened.\n[[AA Emergency, tell me exactly what's happened|Player Tell Me Whats Happened Correct]]\n[[Something else|Player Tell Me Whats Happened Incorrect]]",
+      "links": [
+        {
+          "name": "AA Emergency, tell me exactly what's happened|Player Tell Me Whats Happened Correct",
+          "link": "AA Emergency, tell me exactly what's happened|Player Tell Me Whats Happened Correct"
+        },
+        {
+          "name": "Something else|Player Tell Me Whats Happened Incorrect",
+          "link": "Something else|Player Tell Me Whats Happened Incorrect"
+        }
+      ],
+      "name": "Player Ready No",
+      "pid": "3",
+      "position": {
+        "x": "830",
+        "y": "122"
+      }
+    },
+    {
+      "text": "Hello there, my partner is... well, she's having our baby a bit quicker than expected!  I think she might need an ambulance to get her to hospital.  She's-\n[[Auto transition|Dispatcher Interrupts For Information]]",
+      "links": [
+        {
+          "name": "Auto transition|Dispatcher Interrupts For Information",
+          "link": "Auto transition|Dispatcher Interrupts For Information"
+        }
+      ],
+      "name": "Player Tell Me Whats Happened Correct",
+      "pid": "4",
+      "position": {
+        "x": "643",
+        "y": "380"
+      }
+    },
+    {
+      "text": "Remember, AA Emergency, tell me exactly what's happened.\n[[AA Emergency, tell me exactly what's happened|Player Tell Me Whats Happened Correct]]\n[[Something else|Dispatcher Corridor Tell Me Whats Happened]]",
+      "links": [
+        {
+          "name": "AA Emergency, tell me exactly what's happened|Player Tell Me Whats Happened Correct",
+          "link": "AA Emergency, tell me exactly what's happened|Player Tell Me Whats Happened Correct"
+        },
+        {
+          "name": "Something else|Dispatcher Corridor Tell Me Whats Happened",
+          "link": "Something else|Dispatcher Corridor Tell Me Whats Happened"
+        }
+      ],
+      "name": "Player Tell Me Whats Happened Incorrect",
+      "pid": "5",
+      "position": {
+        "x": "951",
+        "y": "254"
+      }
+    },
+    {
+      "text": "Alright, I'll do this one.  Listen to me.  Ambulance Emergency, tell me exactly what's happened.\n[[Auto transition|Player Tell Me Whats Happened Correct]]",
+      "links": [
+        {
+          "name": "Auto transition|Player Tell Me Whats Happened Correct",
+          "link": "Auto transition|Player Tell Me Whats Happened Correct"
+        }
+      ],
+      "name": "Dispatcher Corridor Tell Me Whats Happened",
+      "pid": "6",
+      "position": {
+        "x": "1093",
+        "y": "389"
+      }
+    },
+    {
+      "text": "Can you find out if he's with her now.\n[[Are you with her now?|Player Caller With Partner Correct]]\n[[Something else|Player Caller With Partner Incorrect]]",
+      "links": [
+        {
+          "name": "Are you with her now?|Player Caller With Partner Correct",
+          "link": "Are you with her now?|Player Caller With Partner Correct"
+        },
+        {
+          "name": "Something else|Player Caller With Partner Incorrect",
+          "link": "Something else|Player Caller With Partner Incorrect"
+        }
+      ],
+      "name": "Dispatcher Interrupts For Information",
+      "pid": "7",
+      "position": {
+        "x": "708",
+        "y": "526"
+      }
+    },
+    {
+      "text": "OK we need to know mum's age and how many weeks pregnant she is...\n\n*Pause*\n\nActually, only ask one to start with, we don't want to overwhelm him.\n\n[[How old is the mother?|Player Asks Mothers Age (Age Branch)]]\n[[How many weeks pregant is the mother?|Player Asks How Many Weeks Pregnant (Weeks Pregnant Branch)]]\n[[Something else|Dispatcher Prompts To Ask Age]]",
+      "links": [
+        {
+          "name": "How old is the mother?|Player Asks Mothers Age (Age Branch)",
+          "link": "How old is the mother?|Player Asks Mothers Age (Age Branch)"
+        },
+        {
+          "name": "How many weeks pregant is the mother?|Player Asks How Many Weeks Pregnant (Weeks Pregnant Branch)",
+          "link": "How many weeks pregant is the mother?|Player Asks How Many Weeks Pregnant (Weeks Pregnant Branch)"
+        },
+        {
+          "name": "Something else|Dispatcher Prompts To Ask Age",
+          "link": "Something else|Dispatcher Prompts To Ask Age"
+        }
+      ],
+      "name": "Dispatcher Interrupts Caller Again",
+      "pid": "8",
+      "position": {
+        "x": "704",
+        "y": "854"
+      }
+    },
+    {
+      "text": "She's 30.\n[[And how many weeks pregnant is she?|Player Asks How Many Weeks Pregnant (Age Branch)]]\n[[Something else|Dispatcher Prompts To Ask How Many Weeks Pregnant (Age Branch)]]",
+      "links": [
+        {
+          "name": "And how many weeks pregnant is she?|Player Asks How Many Weeks Pregnant (Age Branch)",
+          "link": "And how many weeks pregnant is she?|Player Asks How Many Weeks Pregnant (Age Branch)"
+        },
+        {
+          "name": "Something else|Dispatcher Prompts To Ask How Many Weeks Pregnant (Age Branch)",
+          "link": "Something else|Dispatcher Prompts To Ask How Many Weeks Pregnant (Age Branch)"
+        }
+      ],
+      "name": "Player Asks Mothers Age (Age Branch)",
+      "pid": "9",
+      "position": {
+        "x": "761",
+        "y": "1083"
+      }
+    },
+    {
+      "text": "She's almost 41 weeks and very cross about it.\n[[And how old is mum?|Player Asks Mothers Age (Weeks Pregnant Branch)]]\n[[Something else|Dispatcher Prompts To Ask Mothers Age (Weeks Pregnant Branch)]]",
+      "links": [
+        {
+          "name": "And how old is mum?|Player Asks Mothers Age (Weeks Pregnant Branch)",
+          "link": "And how old is mum?|Player Asks Mothers Age (Weeks Pregnant Branch)"
+        },
+        {
+          "name": "Something else|Dispatcher Prompts To Ask Mothers Age (Weeks Pregnant Branch)",
+          "link": "Something else|Dispatcher Prompts To Ask Mothers Age (Weeks Pregnant Branch)"
+        }
+      ],
+      "name": "Player Asks How Many Weeks Pregnant (Weeks Pregnant Branch)",
+      "pid": "10",
+      "position": {
+        "x": "437",
+        "y": "1102"
+      }
+    },
+    {
+      "text": "Ask him how old the mum is.\n[[How old is the mother?|Player Asks Mothers Age (Age Branch)]] \n[[Something else|Dispatcher Corridor Asks Mothers Age]]",
+      "links": [
+        {
+          "name": "How old is the mother?|Player Asks Mothers Age (Age Branch)",
+          "link": "How old is the mother?|Player Asks Mothers Age (Age Branch)"
+        },
+        {
+          "name": "Something else|Dispatcher Corridor Asks Mothers Age",
+          "link": "Something else|Dispatcher Corridor Asks Mothers Age"
+        }
+      ],
+      "name": "Dispatcher Prompts To Ask Age",
+      "pid": "11",
+      "position": {
+        "x": "1056",
+        "y": "1102"
+      }
+    },
+    {
+      "text": "Yes, I am.  Myself, her sister and our dog's trying to get in through the door.  I've shut it outside, don't worry-\n[[Auto transition|Dispatcher Interrupts Caller Again]]",
+      "links": [
+        {
+          "name": "Auto transition|Dispatcher Interrupts Caller Again",
+          "link": "Auto transition|Dispatcher Interrupts Caller Again"
+        }
+      ],
+      "name": "Player Caller With Partner Correct",
+      "pid": "12",
+      "position": {
+        "x": "718",
+        "y": "706"
+      }
+    },
+    {
+      "text": "Come on, focus, if he's not with her that really changes what we can do to help her over the phone.  Ask him again if he's with her.\n[[Are you with your partner?|Player Caller With Partner Correct]] \n[[Something else|Dispatcher Corridor Caller With Partner]]",
+      "links": [
+        {
+          "name": "Are you with your partner?|Player Caller With Partner Correct",
+          "link": "Are you with your partner?|Player Caller With Partner Correct"
+        },
+        {
+          "name": "Something else|Dispatcher Corridor Caller With Partner",
+          "link": "Something else|Dispatcher Corridor Caller With Partner"
+        }
+      ],
+      "name": "Player Caller With Partner Incorrect",
+      "pid": "13",
+      "position": {
+        "x": "916",
+        "y": "540"
+      }
+    },
+    {
+      "text": "So are you with your partner at the moment?\n[[Auto transition|Player Caller With Partner Correct]] ",
+      "links": [
+        {
+          "name": "Auto transition|Player Caller With Partner Correct",
+          "link": "Auto transition|Player Caller With Partner Correct"
+        }
+      ],
+      "name": "Dispatcher Corridor Caller With Partner",
+      "pid": "14",
+      "position": {
+        "x": "979",
+        "y": "697"
+      }
+    },
+    {
+      "text": "How old is the mum?\n[[Auto transition|Player Asks Mothers Age (Age Branch)]] ",
+      "links": [
+        {
+          "name": "Auto transition|Player Asks Mothers Age (Age Branch)",
+          "link": "Auto transition|Player Asks Mothers Age (Age Branch)"
+        }
+      ],
+      "name": "Dispatcher Corridor Asks Mothers Age",
+      "pid": "15",
+      "position": {
+        "x": "1065",
+        "y": "1278"
+      }
+    },
+    {
+      "text": "She's almost 41 weeks and very cross about it.\n[[Auto transition|Dispatcher Where Are They Now Question]] ",
+      "links": [
+        {
+          "name": "Auto transition|Dispatcher Where Are They Now Question",
+          "link": "Auto transition|Dispatcher Where Are They Now Question"
+        }
+      ],
+      "name": "Player Asks How Many Weeks Pregnant (Age Branch)",
+      "pid": "16",
+      "position": {
+        "x": "754",
+        "y": "1476"
+      }
+    },
+    {
+      "text": "Find out how many weeks pregnant the mother is.\n[[How many weeks pregnant is the mother?|Player Asks How Many Weeks Pregnant (Age Branch)]]\n[[Something else|Dispatcher Corridor Ask How Many Weeks Pregnant (Age Branch)]]",
+      "links": [
+        {
+          "name": "How many weeks pregnant is the mother?|Player Asks How Many Weeks Pregnant (Age Branch)",
+          "link": "How many weeks pregnant is the mother?|Player Asks How Many Weeks Pregnant (Age Branch)"
+        },
+        {
+          "name": "Something else|Dispatcher Corridor Ask How Many Weeks Pregnant (Age Branch)",
+          "link": "Something else|Dispatcher Corridor Ask How Many Weeks Pregnant (Age Branch)"
+        }
+      ],
+      "name": "Dispatcher Prompts To Ask How Many Weeks Pregnant (Age Branch)",
+      "pid": "17",
+      "position": {
+        "x": "931",
+        "y": "1325"
+      }
+    },
+    {
+      "text": "She's 30.\n[[Auto transition|Dispatcher Where Are They Now Question]]",
+      "links": [
+        {
+          "name": "Auto transition|Dispatcher Where Are They Now Question",
+          "link": "Auto transition|Dispatcher Where Are They Now Question"
+        }
+      ],
+      "name": "Player Asks Mothers Age (Weeks Pregnant Branch)",
+      "pid": "18",
+      "position": {
+        "x": "606",
+        "y": "1475"
+      }
+    },
+    {
+      "text": "Ask him how old the mum is.\n[[How old is the mother?|Player Asks Mothers Age (Weeks Pregnant Branch)]]\n[[Something else|Dispatcher Corridor Mothers Age (Weeks Pregnant Branch)]]",
+      "links": [
+        {
+          "name": "How old is the mother?|Player Asks Mothers Age (Weeks Pregnant Branch)",
+          "link": "How old is the mother?|Player Asks Mothers Age (Weeks Pregnant Branch)"
+        },
+        {
+          "name": "Something else|Dispatcher Corridor Mothers Age (Weeks Pregnant Branch)",
+          "link": "Something else|Dispatcher Corridor Mothers Age (Weeks Pregnant Branch)"
+        }
+      ],
+      "name": "Dispatcher Prompts To Ask Mothers Age (Weeks Pregnant Branch)",
+      "pid": "19",
+      "position": {
+        "x": "362",
+        "y": "1244"
+      }
+    },
+    {
+      "text": "How old is the mother?\n[[Auto transition|Player Asks Mothers Age (Weeks Pregnant Branch)]]",
+      "links": [
+        {
+          "name": "Auto transition|Player Asks Mothers Age (Weeks Pregnant Branch)",
+          "link": "Auto transition|Player Asks Mothers Age (Weeks Pregnant Branch)"
+        }
+      ],
+      "name": "Dispatcher Corridor Mothers Age (Weeks Pregnant Branch)",
+      "pid": "20",
+      "position": {
+        "x": "373",
+        "y": "1440"
+      }
+    },
+    {
+      "text": "How many weeks pregnant is mum?\n[[Auto transition|Player Asks How Many Weeks Pregnant (Age Branch)]] ",
+      "links": [
+        {
+          "name": "Auto transition|Player Asks How Many Weeks Pregnant (Age Branch)",
+          "link": "Auto transition|Player Asks How Many Weeks Pregnant (Age Branch)"
+        }
+      ],
+      "name": "Dispatcher Corridor Ask How Many Weeks Pregnant (Age Branch)",
+      "pid": "21",
+      "position": {
+        "x": "932",
+        "y": "1453"
+      }
+    },
+    {
+      "text": "Right, the next thing we need to find out is where they currently are.\n[[Where are you?|Player Where Are They Now Correct]]\n[[Something else|Player Where Are They Now Incorrect]]",
+      "links": [
+        {
+          "name": "Where are you?|Player Where Are They Now Correct",
+          "link": "Where are you?|Player Where Are They Now Correct"
+        },
+        {
+          "name": "Something else|Player Where Are They Now Incorrect",
+          "link": "Something else|Player Where Are They Now Incorrect"
+        }
+      ],
+      "name": "Dispatcher Where Are They Now Question",
+      "pid": "22",
+      "position": {
+        "x": "674",
+        "y": "1631"
+      }
+    },
+    {
+      "text": "We're in Hampstead at 21 East Way.\n[[Auto transition|Dispatcher Can We See Baby Question]]",
+      "links": [
+        {
+          "name": "Auto transition|Dispatcher Can We See Baby Question",
+          "link": "Auto transition|Dispatcher Can We See Baby Question"
+        }
+      ],
+      "name": "Player Where Are They Now Correct",
+      "pid": "23",
+      "position": {
+        "x": "575",
+        "y": "1767"
+      }
+    },
+    {
+      "text": "(Caller)  I've told you how many weeks pregnant my partner is and I do really think we need an ambulance.  We're at 21 East Way in Hampstead.  \n[[Auto transition|Dispatcher Can We See Baby Question]] ",
+      "links": [
+        {
+          "name": "Auto transition|Dispatcher Can We See Baby Question",
+          "link": "Auto transition|Dispatcher Can We See Baby Question"
+        }
+      ],
+      "name": "Player Where Are They Now Incorrect",
+      "pid": "24",
+      "position": {
+        "x": "806",
+        "y": "1768"
+      }
+    },
+    {
+      "text": "Alright, find out if any of the baby is visible because he might have to deliver it himself.\n[[Is any of the baby visible?|Player Can We See Baby Correct]]\n[[Something else|Player Can We See Baby Incorrect]]",
+      "links": [
+        {
+          "name": "Is any of the baby visible?|Player Can We See Baby Correct",
+          "link": "Is any of the baby visible?|Player Can We See Baby Correct"
+        },
+        {
+          "name": "Something else|Player Can We See Baby Incorrect",
+          "link": "Something else|Player Can We See Baby Incorrect"
+        }
+      ],
+      "name": "Dispatcher Can We See Baby Question",
+      "pid": "25",
+      "position": {
+        "x": "688",
+        "y": "1911"
+      }
+    },
+    {
+      "text": "Yes, I can see the top of the head.  It's coming alright!\n[[Auto transition|Dispatcher Send Ambulance Question]]",
+      "links": [
+        {
+          "name": "Auto transition|Dispatcher Send Ambulance Question",
+          "link": "Auto transition|Dispatcher Send Ambulance Question"
+        }
+      ],
+      "name": "Player Can We See Baby Correct",
+      "pid": "26",
+      "position": {
+        "x": "625",
+        "y": "2215"
+      }
+    },
+    {
+      "text": "It's important we know this for the paramedics.  Find out if any of the baby is visible.\n[[Is any of the baby visible?|Player Can We See Baby Correct]] \n[[Something else|Dispatcher Corridors Can We See Baby]]",
+      "links": [
+        {
+          "name": "Is any of the baby visible?|Player Can We See Baby Correct",
+          "link": "Is any of the baby visible?|Player Can We See Baby Correct"
+        },
+        {
+          "name": "Something else|Dispatcher Corridors Can We See Baby",
+          "link": "Something else|Dispatcher Corridors Can We See Baby"
+        }
+      ],
+      "name": "Player Can We See Baby Incorrect",
+      "pid": "27",
+      "position": {
+        "x": "824",
+        "y": "2030"
+      }
+    },
+    {
+      "text": "Can you see any of the baby?\n[[Auto transition|Player Can We See Baby Correct]] ",
+      "links": [
+        {
+          "name": "Auto transition|Player Can We See Baby Correct",
+          "link": "Auto transition|Player Can We See Baby Correct"
+        }
+      ],
+      "name": "Dispatcher Corridors Can We See Baby",
+      "pid": "28",
+      "position": {
+        "x": "1023",
+        "y": "2126"
+      }
+    },
+    {
+      "text": "OK, based on the information we have should we send an ambulance?\n[[Yes|Player Send Ambulance Correct]]\n[[No|Player Send Ambulance Incorrect]]",
+      "links": [
+        {
+          "name": "Yes|Player Send Ambulance Correct",
+          "link": "Yes|Player Send Ambulance Correct"
+        },
+        {
+          "name": "No|Player Send Ambulance Incorrect",
+          "link": "No|Player Send Ambulance Incorrect"
+        }
+      ],
+      "name": "Dispatcher Send Ambulance Question",
+      "pid": "29",
+      "position": {
+        "x": "811",
+        "y": "2341"
+      }
+    },
+    {
+      "text": "Cool, yeah I agree. So, because the baby's crowning they definitely don't have enough time to get a taxi.  I reckon Dad's going to have to deliver the baby himself. So really the ambulance is needed for aftercare.  \n\nTell him to stay on the line and we'll tell him exactly what to do next.\n[[Stay on the line, we'll tell you what to do|Player Stay On The Line Correct]]\n[[Something else|Player Stay On The Line Incorrect]]",
+      "links": [
+        {
+          "name": "Stay on the line, we'll tell you what to do|Player Stay On The Line Correct",
+          "link": "Stay on the line, we'll tell you what to do|Player Stay On The Line Correct"
+        },
+        {
+          "name": "Something else|Player Stay On The Line Incorrect",
+          "link": "Something else|Player Stay On The Line Incorrect"
+        }
+      ],
+      "name": "Player Send Ambulance Correct",
+      "pid": "30",
+      "position": {
+        "x": "734",
+        "y": "2491"
+      }
+    },
+    {
+      "text": "(Incredulous)  I'll mark that down, but I think it's high enough priority that the CTM is going to overule you on this one.\n\n(Exasperated)  Tell him to stay on the line and we'll tell him what to do next.\n[[Stay on the line and we'll tell you what to do next|Player Stay On The Line Correct]] \n[[Something else|Player Stay On The Line Incorrect]]",
+      "links": [
+        {
+          "name": "Stay on the line and we'll tell you what to do next|Player Stay On The Line Correct",
+          "link": "Stay on the line and we'll tell you what to do next|Player Stay On The Line Correct"
+        },
+        {
+          "name": "Something else|Player Stay On The Line Incorrect",
+          "link": "Something else|Player Stay On The Line Incorrect"
+        }
+      ],
+      "name": "Player Send Ambulance Incorrect",
+      "pid": "31",
+      "position": {
+        "x": "998",
+        "y": "2494"
+      }
+    },
+    {
+      "text": "Yes ok... When are the paramedics getting here?  I think it might be about to happen.  Do you think I'm gonna... OH MY GOD AM I GONNA HAVE TO?!-\n[[Auto transition|Dispatcher Baby Slippery Instruction]]",
+      "links": [
+        {
+          "name": "Auto transition|Dispatcher Baby Slippery Instruction",
+          "link": "Auto transition|Dispatcher Baby Slippery Instruction"
+        }
+      ],
+      "name": "Player Stay On The Line Correct",
+      "pid": "32",
+      "position": {
+        "x": "746",
+        "y": "2658"
+      }
+    },
+    {
+      "text": "(Caller)  Hi there, just wondering if there's anything I should be doing because I think the baby's about to come... OH MY GOD AM I GONNA HAVE TO-?!\n[[Auto transition|Dispatcher Baby Slippery Instruction]] ",
+      "links": [
+        {
+          "name": "Auto transition|Dispatcher Baby Slippery Instruction",
+          "link": "Auto transition|Dispatcher Baby Slippery Instruction"
+        }
+      ],
+      "name": "Player Stay On The Line Incorrect",
+      "pid": "33",
+      "position": {
+        "x": "972",
+        "y": "2659"
+      }
+    },
+    {
+      "text": "Yep!  Tell him the baby's gonna be slippery!\n[[Baby's gonna be slippery|Player Baby Slippery Instruction Correct]]\n[[Something else|Player Baby Slippery Instruction Incorrect]]",
+      "links": [
+        {
+          "name": "Baby's gonna be slippery|Player Baby Slippery Instruction Correct",
+          "link": "Baby's gonna be slippery|Player Baby Slippery Instruction Correct"
+        },
+        {
+          "name": "Something else|Player Baby Slippery Instruction Incorrect",
+          "link": "Something else|Player Baby Slippery Instruction Incorrect"
+        }
+      ],
+      "name": "Dispatcher Baby Slippery Instruction",
+      "pid": "34",
+      "position": {
+        "x": "860",
+        "y": "2820"
+      }
+    },
+    {
+      "text": "*Nervous Laugh*\n[[Auto transition|Dispatcher Where To Hold Baby Instruction]]",
+      "links": [
+        {
+          "name": "Auto transition|Dispatcher Where To Hold Baby Instruction",
+          "link": "Auto transition|Dispatcher Where To Hold Baby Instruction"
+        }
+      ],
+      "name": "Player Baby Slippery Instruction Correct",
+      "pid": "35",
+      "position": {
+        "x": "753",
+        "y": "2982"
+      }
+    },
+    {
+      "text": "(Caller)  Are you saying I'm gonna have to deliver my own baby?!!!\n(Dispatcher)  We can't let him drop the baby.  Tell him it's going to be slippery.\n[[The baby will be slippery|Player Baby Slippery Instruction Correct]] \n[[Something else|Dispatcher Corridors Baby Slippery Instruction]]",
+      "links": [
+        {
+          "name": "The baby will be slippery|Player Baby Slippery Instruction Correct",
+          "link": "The baby will be slippery|Player Baby Slippery Instruction Correct"
+        },
+        {
+          "name": "Something else|Dispatcher Corridors Baby Slippery Instruction",
+          "link": "Something else|Dispatcher Corridors Baby Slippery Instruction"
+        }
+      ],
+      "name": "Player Baby Slippery Instruction Incorrect",
+      "pid": "36",
+      "position": {
+        "x": "1057",
+        "y": "2899"
+      }
+    },
+    {
+      "text": "OK so, Dad needs to support the head and hold the hips and legs tight.  Tell him that quickly!\n[[Support the head and hold the hips and legs tight|Player Where To Hold Baby Instruction Correct]]\n[[Something else|Player Where To Hold Baby Instruction Incorrect]]",
+      "links": [
+        {
+          "name": "Support the head and hold the hips and legs tight|Player Where To Hold Baby Instruction Correct",
+          "link": "Support the head and hold the hips and legs tight|Player Where To Hold Baby Instruction Correct"
+        },
+        {
+          "name": "Something else|Player Where To Hold Baby Instruction Incorrect",
+          "link": "Something else|Player Where To Hold Baby Instruction Incorrect"
+        }
+      ],
+      "name": "Dispatcher Where To Hold Baby Instruction",
+      "pid": "37",
+      "position": {
+        "x": "894",
+        "y": "3176"
+      }
+    },
+    {
+      "text": "Okay, thanks.  Baby slippery - head, legs and hips.  Got it.  Here we go.\n\n*Sounds of phone clattering to floor/surface*\n*Lady screaming*\n*Another lady encouraging her*\n\n[[Auto transition|Dispatcher Check On Caller Instruction]]",
+      "links": [
+        {
+          "name": "Auto transition|Dispatcher Check On Caller Instruction",
+          "link": "Auto transition|Dispatcher Check On Caller Instruction"
+        }
+      ],
+      "name": "Player Where To Hold Baby Instruction Correct",
+      "pid": "38",
+      "position": {
+        "x": "818",
+        "y": "3327"
+      }
+    },
+    {
+      "text": "OK, we're on a clock here and it's a lot to remember.  I'll do this one.  \n[Insert introduction if necessary]\n\nSir, make sure you support the baby's head and hold the hips and legs tight.  Make sure you don't drop the baby!\n\n[[Auto transition|Player Where To Hold Baby Instruction Correct]] ",
+      "links": [
+        {
+          "name": "Auto transition|Player Where To Hold Baby Instruction Correct",
+          "link": "Auto transition|Player Where To Hold Baby Instruction Correct"
+        }
+      ],
+      "name": "Player Where To Hold Baby Instruction Incorrect",
+      "pid": "39",
+      "position": {
+        "x": "968",
+        "y": "3327"
+      }
+    },
+    {
+      "text": "It's really important that you know that the baby is going to be slippery.\n[[Auto transition|Player Baby Slippery Instruction Correct]] ",
+      "links": [
+        {
+          "name": "Auto transition|Player Baby Slippery Instruction Correct",
+          "link": "Auto transition|Player Baby Slippery Instruction Correct"
+        }
+      ],
+      "name": "Dispatcher Corridors Baby Slippery Instruction",
+      "pid": "40",
+      "position": {
+        "x": "1057",
+        "y": "3049"
+      }
+    },
+    {
+      "text": "Alright, can we check on Dad please.\n\n[[Are you ok?|Player Check On Caller Shout]]\n[[Something else|Player Check On Caller Shout]]",
+      "links": [
+        {
+          "name": "Are you ok?|Player Check On Caller Shout",
+          "link": "Are you ok?|Player Check On Caller Shout"
+        },
+        {
+          "name": "Something else|Player Check On Caller Shout",
+          "link": "Something else|Player Check On Caller Shout"
+        }
+      ],
+      "name": "Dispatcher Check On Caller Instruction",
+      "pid": "41",
+      "position": {
+        "x": "894",
+        "y": "3479"
+      }
+    },
+    {
+      "text": "*Audio of delivery*\n\nOk, he's put us down - try again.  Shout this time - they need to hear you.\n\n[[Are you ok?|Caller Birth]]\n[[Something else|Caller Birth]]",
+      "links": [
+        {
+          "name": "Are you ok?|Caller Birth",
+          "link": "Are you ok?|Caller Birth"
+        },
+        {
+          "name": "Something else|Caller Birth",
+          "link": "Something else|Caller Birth"
+        }
+      ],
+      "name": "Player Check On Caller Shout",
+      "pid": "42",
+      "position": {
+        "x": "887",
+        "y": "3625"
+      }
+    },
+    {
+      "text": "*Lady screams*\n*Father laughs*\n*Phone clatters*\n\nHello?  Hi, I'm Charlotte's sister.  Baby's out!  Baby's out!\n\n[[Auto transition|Dispatcher Baby Crying Breathing Question]]R",
+      "links": [
+        {
+          "name": "Auto transition|Dispatcher Baby Crying Breathing Question",
+          "link": "Auto transition|Dispatcher Baby Crying Breathing Question"
+        }
+      ],
+      "name": "Caller Birth",
+      "pid": "43",
+      "position": {
+        "x": "887",
+        "y": "3775"
+      }
+    },
+    {
+      "text": "Is the baby crying or breathing?\n\n[[Is the baby crying or breathing?|Player Baby Crying Breathing Question Correct]]\n[[Something else|Baby Cries]]",
+      "links": [
+        {
+          "name": "Is the baby crying or breathing?|Player Baby Crying Breathing Question Correct",
+          "link": "Is the baby crying or breathing?|Player Baby Crying Breathing Question Correct"
+        },
+        {
+          "name": "Something else|Baby Cries",
+          "link": "Something else|Baby Cries"
+        }
+      ],
+      "name": "Dispatcher Baby Crying Breathing Question",
+      "pid": "44",
+      "position": {
+        "x": "1002",
+        "y": "3961"
+      }
+    },
+    {
+      "text": "(Father)  I don't think so.\n(Sister)  No!\n(Dispatcher)  Ok can they see anything wrong?\n\n[[Is anything obviously wrong?|Player Is Anything Wrong Correct]]\n[[Something else|Callers Panic What Do We Do]]",
+      "links": [
+        {
+          "name": "Is anything obviously wrong?|Player Is Anything Wrong Correct",
+          "link": "Is anything obviously wrong?|Player Is Anything Wrong Correct"
+        },
+        {
+          "name": "Something else|Callers Panic What Do We Do",
+          "link": "Something else|Callers Panic What Do We Do"
+        }
+      ],
+      "name": "Player Baby Crying Breathing Question Correct",
+      "pid": "45",
+      "position": {
+        "x": "751",
+        "y": "4079"
+      }
+    },
+    {
+      "text": "(Sister and Father)No!\n\n[[Auto transition|Dispatcher Rub Babys Back Instruction]]",
+      "links": [
+        {
+          "name": "Auto transition|Dispatcher Rub Babys Back Instruction",
+          "link": "Auto transition|Dispatcher Rub Babys Back Instruction"
+        }
+      ],
+      "name": "Player Is Anything Wrong Correct",
+      "pid": "46",
+      "position": {
+        "x": "656",
+        "y": "4251"
+      }
+    },
+    {
+      "text": "What do we do?!\n\n[[Auto transition|Dispatcher Rub Babys Back Instruction]] ",
+      "links": [
+        {
+          "name": "Auto transition|Dispatcher Rub Babys Back Instruction",
+          "link": "Auto transition|Dispatcher Rub Babys Back Instruction"
+        }
+      ],
+      "name": "Callers Panic What Do We Do",
+      "pid": "47",
+      "position": {
+        "x": "848",
+        "y": "4250"
+      }
+    },
+    {
+      "text": "Alright, they need to rub baby's back briskly with a towel for 30 seconds.  Tell them now.\n\n[[Rub the baby's back briskly with a towel for 30 seconds|Player Rub Babys Back Instruction Correct]]\n[[Something else|Player Rub Babys Back Instruction Incorrect]]",
+      "links": [
+        {
+          "name": "Rub the baby's back briskly with a towel for 30 seconds|Player Rub Babys Back Instruction Correct",
+          "link": "Rub the baby's back briskly with a towel for 30 seconds|Player Rub Babys Back Instruction Correct"
+        },
+        {
+          "name": "Something else|Player Rub Babys Back Instruction Incorrect",
+          "link": "Something else|Player Rub Babys Back Instruction Incorrect"
+        }
+      ],
+      "name": "Dispatcher Rub Babys Back Instruction",
+      "pid": "48",
+      "position": {
+        "x": "744",
+        "y": "4457"
+      }
+    },
+    {
+      "text": "(Sister)  Okay, Tim - rub baby's back for with a towel for 30 seconds.\n(Father)  Come on little one.  Come on, come on.\n\n[[Auto transition|Baby Cries]]",
+      "links": [
+        {
+          "name": "Auto transition|Baby Cries",
+          "link": "Auto transition|Baby Cries"
+        }
+      ],
+      "name": "Player Rub Babys Back Instruction Correct",
+      "pid": "49",
+      "position": {
+        "x": "735",
+        "y": "4739"
+      }
+    },
+    {
+      "text": "Alright, let's get this baby breathing.  Hi!  You need to rub the baby's back with a clean towel for 30 seconds.  Can you do that for me now?\n\n(Father)  Come on little one.  Come on, come on.\n\n[[Auto transition|Baby Cries]]",
+      "links": [
+        {
+          "name": "Auto transition|Baby Cries",
+          "link": "Auto transition|Baby Cries"
+        }
+      ],
+      "name": "Player Rub Babys Back Instruction Incorrect",
+      "pid": "50",
+      "position": {
+        "x": "841",
+        "y": "4608"
+      }
+    },
+    {
+      "text": "*Silence*\n*Baby cries*\n\n(Dispatcher)  There we go!\n(Sister)  Baby's crying, baby's crying!\n(Father)  Hey there little one.\n\n[[Auto transition|Dispatcher Final Instructions Instruction]]",
+      "links": [
+        {
+          "name": "Auto transition|Dispatcher Final Instructions Instruction",
+          "link": "Auto transition|Dispatcher Final Instructions Instruction"
+        }
+      ],
+      "name": "Baby Cries",
+      "pid": "51",
+      "position": {
+        "x": "1125",
+        "y": "4886"
+      }
+    },
+    {
+      "text": "In a sec we'll give them a few more instructions, but first is it a boy or a girl?\n\n[[Is it a boy or a girl?|Player Boy Or Girl Question]]\n[[Something else|Player Boy Or Girl Question]]",
+      "links": [
+        {
+          "name": "Is it a boy or a girl?|Player Boy Or Girl Question",
+          "link": "Is it a boy or a girl?|Player Boy Or Girl Question"
+        },
+        {
+          "name": "Something else|Player Boy Or Girl Question",
+          "link": "Something else|Player Boy Or Girl Question"
+        }
+      ],
+      "name": "Dispatcher Final Instructions Instruction",
+      "pid": "52",
+      "position": {
+        "x": "745",
+        "y": "4921"
+      }
+    },
+    {
+      "text": "(Sister)  It's a little boy!\n\n[[Auto transition|Dispatcher Say Congratulations Instruction]]",
+      "links": [
+        {
+          "name": "Auto transition|Dispatcher Say Congratulations Instruction",
+          "link": "Auto transition|Dispatcher Say Congratulations Instruction"
+        }
+      ],
+      "name": "Player Boy Or Girl Question",
+      "pid": "53",
+      "position": {
+        "x": "746",
+        "y": "5069"
+      }
+    },
+    {
+      "text": "Congratulate them!\n\n[[Congratulations!|Player Congratulations Correct]]\n[[Something else|Paramedics Arrive]]",
+      "links": [
+        {
+          "name": "Congratulations!|Player Congratulations Correct",
+          "link": "Congratulations!|Player Congratulations Correct"
+        },
+        {
+          "name": "Something else|Paramedics Arrive",
+          "link": "Something else|Paramedics Arrive"
+        }
+      ],
+      "name": "Dispatcher Say Congratulations Instruction",
+      "pid": "54",
+      "position": {
+        "x": "744",
+        "y": "5221"
+      }
+    },
+    {
+      "text": "(Sister)  Thank you so much!\n(Father)  Tell you what, I don't think I've been so scared as I was when you told me I had to deliver the baby.  Thanks for being so calm!\n(Sister)  [Insert Baby Talk]\n\n[[Auto transition|Paramedics Arrive]]",
+      "links": [
+        {
+          "name": "Auto transition|Paramedics Arrive",
+          "link": "Auto transition|Paramedics Arrive"
+        }
+      ],
+      "name": "Player Congratulations Correct",
+      "pid": "55",
+      "position": {
+        "x": "684",
+        "y": "5368"
+      }
+    },
+    {
+      "text": "*Dog Barks*\n\n(Sister)  HI!  Hello!  Yes, we're in here.  Don't mind the dog, she won't hurt you.  We're in here!\n\n[[Auto transition|Dispatcher Paramedics Arrived Question]]",
+      "links": [
+        {
+          "name": "Auto transition|Dispatcher Paramedics Arrived Question",
+          "link": "Auto transition|Dispatcher Paramedics Arrived Question"
+        }
+      ],
+      "name": "Paramedics Arrive",
+      "pid": "56",
+      "position": {
+        "x": "821",
+        "y": "5487"
+      }
+    },
+    {
+      "text": "Sounds like the paramedics.  Are they with them now?\n\n[[Are the paramedics there?|Player Paramedics Arrived Question Correct]]\n[[Something else|Player Paramedics Arrived Question Incorrect]]",
+      "links": [
+        {
+          "name": "Are the paramedics there?|Player Paramedics Arrived Question Correct",
+          "link": "Are the paramedics there?|Player Paramedics Arrived Question Correct"
+        },
+        {
+          "name": "Something else|Player Paramedics Arrived Question Incorrect",
+          "link": "Something else|Player Paramedics Arrived Question Incorrect"
+        }
+      ],
+      "name": "Dispatcher Paramedics Arrived Question",
+      "pid": "57",
+      "position": {
+        "x": "754",
+        "y": "5617"
+      }
+    },
+    {
+      "text": "(Sister)  Yeah they're just coming in to the house now.\n(Dispatcher)  Okay, let them go now.  They did really well.  Tell them well done.\n\n[[Well done!|Well Done Correct]]\n[[Something else|Well Done Incorrect]]",
+      "links": [
+        {
+          "name": "Well done!|Well Done Correct",
+          "link": "Well done!|Well Done Correct"
+        },
+        {
+          "name": "Something else|Well Done Incorrect",
+          "link": "Something else|Well Done Incorrect"
+        }
+      ],
+      "name": "Player Paramedics Arrived Question Correct",
+      "pid": "58",
+      "position": {
+        "x": "640",
+        "y": "5772"
+      }
+    },
+    {
+      "text": "(Sister)  Ok the paramedics are here now, so we've got to go.  Bye!",
+      "name": "Player Paramedics Arrived Question Incorrect",
+      "pid": "59",
+      "position": {
+        "x": "912",
+        "y": "5788"
+      }
+    },
+    {
+      "text": "Thanks so much, bye bye now!",
+      "name": "Well Done Correct",
+      "pid": "60",
+      "position": {
+        "x": "568",
+        "y": "5920"
+      }
+    },
+    {
+      "text": "We have to go now, bye!",
+      "name": "Well Done Incorrect",
+      "pid": "61",
+      "position": {
+        "x": "764",
+        "y": "5910"
+      }
+    }
+  ],
+  "name": "Birth Call",
+  "startnode": "1",
+  "creator": "Twine",
+  "creator-version": "2.2.1",
+  "ifid": "0AD8E7B2-C975-4192-95BC-51BC952F2099"
+}
