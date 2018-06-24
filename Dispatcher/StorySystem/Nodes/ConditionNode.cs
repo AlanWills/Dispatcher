@@ -6,13 +6,17 @@ using Dispatcher.IntentHandlers;
 using Dispatcher.StorySystem.Conditions;
 using Alexa.NET.Request;
 using Amazon.Lambda.Core;
+using Alexa.NET.Response;
+using Alexa.NET;
 
 namespace Dispatcher.StorySystem.Nodes
 {
     public class ConditionNode : BaseNode
     {
         #region Properties and Fields
-        
+
+        public override bool PausesStory { get { return false; } }
+
         private List<Condition> Conditions { get; } = new List<Condition>();
 
         #endregion
@@ -27,6 +31,11 @@ namespace Dispatcher.StorySystem.Nodes
                     Conditions.Add(choices[i]);
                 }
             }
+        }
+
+        public override SkillResponse CreateResponse()
+        {
+            return ResponseBuilder.Empty();
         }
 
         public override BaseNode GetNextNode(Intent intent, Session session, ILambdaContext lambdaContext)

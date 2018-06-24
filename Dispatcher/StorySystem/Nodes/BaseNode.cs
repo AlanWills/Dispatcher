@@ -15,6 +15,8 @@ namespace Dispatcher.StorySystem.Nodes
 
         public int NextNodeIndex { get; }
 
+        public abstract bool PausesStory { get; }
+
         #endregion
         
         public BaseNode(int nextNodeIndex)
@@ -23,6 +25,8 @@ namespace Dispatcher.StorySystem.Nodes
         }
 
         #region Abstract and Virtual Functions
+
+        public abstract SkillResponse CreateResponse();
 
         public virtual BaseNode GetNextNode(Intent intent, Session session, ILambdaContext lambdaContext)
         {

@@ -257,15 +257,15 @@ namespace Dispatcher.StorySystem
             new SpeechNode(73, new SpeechBuilder().
                 Add(new Audio(Player_Paramedics_Arrived_Question_Correct))),
             // 72 - Player Paramedics Arrived Question Incorrect
-            new SpeechNode(/*End*/1, new SpeechBuilder().
+            new FinishWithCardNode("Birth Call", "Completed", new SpeechBuilder().
                 Add(new Audio(Player_Paramedics_Arrived_Question_Incorrect))),
             // 73 - Well done!
             new CheckNextIntentNode(74, WellDoneIntent, 75, "WellDone_Correct"),
             // 74 - Well Done Correct
-            new SpeechNode(/*End*/1, new SpeechBuilder().
+            new FinishWithCardNode("Birth Call", "Completed", new SpeechBuilder().
                 Add(new Audio(Well_Done_Correct))),
             // 75 - Well Done Incorrect
-            new SpeechNode(/*End*/1, new SpeechBuilder().
+            new FinishWithCardNode("Birth Call", "Completed", new SpeechBuilder().
                 Add(new Audio(Well_Done_Incorrect))),
         };
 
@@ -296,32 +296,16 @@ namespace Dispatcher.StorySystem
         {
             Dictionary<string, object> responseSessionAttributes = session.Attributes ?? new Dictionary<string, object>();
 
-            while (node != null && !(node is SpeechNode))
+            while (node != null && !node.PausesStory)
             {
                 node.ModifySessionAttributes(session.Attributes, intent, session, lambdaContext);
                 node = node.GetNextNode(intent, session, lambdaContext);
             }
 
-            SpeechNode speechNode = node as SpeechNode;
-            lambdaContext.Logger.LogLine("Speech Node element count " + speechNode.Speech.Elements.Count);
-
-            SkillResponse response = speechNode != null ? ResponseBuilder.Tell(speechNode.Speech) : ResponseBuilder.Empty();
-            response.Response.ShouldEndSession = speechNode == null;
-
-            // Update the record of the current node we are on
+            SkillResponse response = node.CreateResponse();
+            // ModifySessionAttributes won't be called on a node which Pauses the story, so we call it manually here
+            node.ModifySessionAttributes(session.Attributes, intent, session, lambdaContext);
             response.SessionAttributes = responseSessionAttributes;
-
-            long nextIndex = speechNode != null ? speechNode.NextNodeIndex : -1;
-            lambdaContext.Logger.LogLine("Next Index: " + nextIndex);
-
-            if (!responseSessionAttributes.ContainsKey(CurrentNodeIndexKey))
-            {
-                response.SessionAttributes.Add(CurrentNodeIndexKey, nextIndex);
-            }
-            else
-            {
-                response.SessionAttributes[CurrentNodeIndexKey] = nextIndex;
-            }
 
             return response;
         }

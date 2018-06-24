@@ -2,16 +2,20 @@
 using System.Collections.Generic;
 using System.Text;
 using Alexa.NET.Request;
+using Alexa.NET.Response;
 using Alexa.NET.Response.Ssml;
 using Amazon.Lambda.Core;
 using Dispatcher.IntentHandlers;
+using Alexa.NET;
 
 namespace Dispatcher.StorySystem.Nodes
 {
     public class CheckNextIntentNode : BaseNode
     {
         #region Properties and Fields
-        
+
+        public override bool PausesStory { get { return false; } }
+
         public Dictionary<string, int> ValidIntents { get; }
 
         /// <summary>
@@ -47,6 +51,11 @@ namespace Dispatcher.StorySystem.Nodes
         #endregion
 
         #region Base Node Overrides
+
+        public override SkillResponse CreateResponse()
+        {
+            return ResponseBuilder.Empty();
+        }
 
         public override void ModifySessionAttributes(Dictionary<string, object> attributes, Intent intent, Session session, ILambdaContext lambdaContext)
         {
