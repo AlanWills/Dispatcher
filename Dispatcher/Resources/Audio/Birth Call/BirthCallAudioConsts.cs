@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-class BirthCallAudioConsts
+public class BirthCallAudioConsts
 {
 	public const string Baby_Cries = "https://s3-eu-west-1.amazonaws.com/rtg-dispatcher/birth-call/Baby_Cries.mp3";
 	public const string Callers_Panic_What_Do_We_Do = "https://s3-eu-west-1.amazonaws.com/rtg-dispatcher/birth-call/Callers_Panic_What_Do_We_Do.mp3";
@@ -25,7 +25,6 @@ class BirthCallAudioConsts
 	public const string Dispatcher_Where_Are_They_Now_Question = "https://s3-eu-west-1.amazonaws.com/rtg-dispatcher/birth-call/Dispatcher_Where_Are_They_Now_Question.mp3";
 	public const string Dispatcher_Where_To_Hold_Baby_Instruction = "https://s3-eu-west-1.amazonaws.com/rtg-dispatcher/birth-call/Dispatcher_Where_To_Hold_Baby_Instruction.mp3";
 	public const string Paramedics_Arrive = "https://s3-eu-west-1.amazonaws.com/rtg-dispatcher/birth-call/Paramedics_Arrive.mp3";
-	public const string Player_Where_To_Hold_Baby_Instruction_Incorrect = "https://s3-eu-west-1.amazonaws.com/rtg-dispatcher/birth-call/Player Where To Hold Baby Instruction Incorrect.mp3";
 	public const string Player_Asks_How_Many_Weeks_Pregnant_Age_Branch = "https://s3-eu-west-1.amazonaws.com/rtg-dispatcher/birth-call/Player_Asks_How_Many_Weeks_Pregnant_Age_Branch.mp3";
 	public const string Player_Asks_How_Many_Weeks_Pregnant_Weeks_Pregnant_Branch = "https://s3-eu-west-1.amazonaws.com/rtg-dispatcher/birth-call/Player_Asks_How_Many_Weeks_Pregnant_Weeks_Pregnant_Branch.mp3";
 	public const string Player_Asks_Mothers_Age_Age_Branch = "https://s3-eu-west-1.amazonaws.com/rtg-dispatcher/birth-call/Player_Asks_Mothers_Age_Age_Branch.mp3";
@@ -55,6 +54,7 @@ class BirthCallAudioConsts
 	public const string Player_Where_Are_They_Now_Correct = "https://s3-eu-west-1.amazonaws.com/rtg-dispatcher/birth-call/Player_Where_Are_They_Now_Correct.mp3";
 	public const string Player_Where_Are_They_Now_Incorrect = "https://s3-eu-west-1.amazonaws.com/rtg-dispatcher/birth-call/Player_Where_Are_They_Now_Incorrect.mp3";
 	public const string Player_Where_To_Hold_Baby_Instruction_Correct = "https://s3-eu-west-1.amazonaws.com/rtg-dispatcher/birth-call/Player_Where_To_Hold_Baby_Instruction_Correct.mp3";
+	public const string Player_Where_To_Hold_Baby_Instruction_Incorrect = "https://s3-eu-west-1.amazonaws.com/rtg-dispatcher/birth-call/Player_Where_To_Hold_Baby_Instruction_Incorrect.mp3";
 	public const string Well_Done_Correct = "https://s3-eu-west-1.amazonaws.com/rtg-dispatcher/birth-call/Well_Done_Correct.mp3";
 	public const string Well_Done_Incorrect = "https://s3-eu-west-1.amazonaws.com/rtg-dispatcher/birth-call/Well_Done_Incorrect.mp3";
 }
