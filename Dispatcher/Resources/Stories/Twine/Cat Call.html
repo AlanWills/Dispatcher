@@ -1,0 +1,90 @@
+<tw-storydata name="Cat Call" startnode="1" creator="Twine" creator-version="2.2.1" ifid="BBB4C433-1846-4CAF-A767-52ABF0341BD9" zoom="1" format="SugarCube" format-version="2.21.0" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">
+</style><script role="script" id="twine-user-script" type="text/twine-javascript">
+</script><tw-passagedata pid="1" name="Dispatcher Prompt" tags="" position="572,45" size="100,100">TODO Audio
+
+Alright.  When you&#39;re ready.
+
+[[AA Emergency, tell me exactly what&#39;s happened|Tell Me Whats Happened Correct]]
+[[Something else|Tell Me Whats Happened Incorrect]]</tw-passagedata><tw-passagedata pid="2" name="Tell Me Whats Happened Correct" tags="" position="593,291" size="100,100">TODO Audio
+
+Hi. Um, I’ve got someone here - they’re bleeding really badly. They need help.
+[[Auto transition|Dispatcher Breathing Question]]</tw-passagedata><tw-passagedata pid="3" name="Tell Me Whats Happened Incorrect" tags="" position="757,64" size="100,100">TODO Audio
+
+Ouch, not a good start.  Remember, it&#39;s &#39;Ambulance Emergency, tell me exactly what&#39;s happened&#39;.
+[[AA Emergency, tell me exactly what&#39;s happened|Tell Me Whats Happened Correct]]
+[[Something else|Tell Me Whats Happened Incorrect Again]]</tw-passagedata><tw-passagedata pid="4" name="Tell Me Whats Happened Incorrect Again" tags="" position="839,205" size="100,100">Okay, let me do it.  Ambulance Emergency, tell me exactly what&#39;s happened.
+[[Auto transition|Tell Me Whats Happened Correct]] </tw-passagedata><tw-passagedata pid="5" name="Dispatcher Breathing Question" tags="" position="593,433" size="100,100">TODO Audio
+
+*Eurgh* OK here we go - check if they&#39;re breathing.
+[[Are they breathing|Breathing Question Correct]]
+[[Something else|Breathing Question Incorrect]]</tw-passagedata><tw-passagedata pid="6" name="Breathing Question Correct" tags="" position="521,585" size="100,100">TODO Audio
+
+Um, well.  It&#39;s actually not person.  It&#39;s our cat.  She- I don&#39;t actually know what happened, but she&#39;s bleeding really badly.  She is breathing though.  Yeah.  I was wondering whether you&#39;d be able to help.
+[[Auto transition|Dispatcher Cat Incredulous]]</tw-passagedata><tw-passagedata pid="7" name="Breathing Question Incorrect" tags="" position="808,531" size="100,100">TODO Audio
+
+Oh sorry, I&#39;m a bit short of hearing these days.  Could you repeat that for me?
+[[Are they breathing|Breathing Question Correct]]
+[[Something else|Breathing Question Incorrect Again]]</tw-passagedata><tw-passagedata pid="8" name="Breathing Question Incorrect Again" tags="" position="820,714" size="100,100">It&#39;s really important we know this.  I&#39;ll do it.  Is the patient breathing?
+[[Auto transition|Breathing Question Correct]]</tw-passagedata><tw-passagedata pid="9" name="Dispatcher Cat Incredulous" tags="" position="571,739" size="100,100">TODO Audio
+
+His cat?!  He wants help for his cat?!!!  Alright... alright... clarify that.
+[[Are you calling about a cat?|Calling About Cat Question Correct]]
+[[Something else|Calling About Cat Question Incorrect]]</tw-passagedata><tw-passagedata pid="10" name="Calling About Cat Question Correct" tags="" position="443,877" size="100,100">TODO Audio
+
+Yes, that&#39;s right.
+[[Auto transition|Dispatcher Call Cost Question]]</tw-passagedata><tw-passagedata pid="11" name="Calling About Cat Question Incorrect" tags="" position="730,879" size="100,100">(Wife)  What are they saying Marcus?
+(Husband)  Hello, hello, are you able to help my cat?
+[[Auto transition|Dispatcher Inform About Vet]] </tw-passagedata><tw-passagedata pid="12" name="Dispatcher Inform About Vet" tags="" position="779,1164" size="100,100">TODO Audio
+
+Tell him we don&#39;t deal with cats.  We&#39;re an *ambulance service*, he needs to call a vet.
+[[You need to call a vet|Call Vet Correct]]
+[[Something else|Call Vet Incorrect]]</tw-passagedata><tw-passagedata pid="13" name="Dispatcher Call Cost Question" tags="" position="486,1015" size="100,100">TODO Audio
+
+For God&#39;s sake, how many pounds do you think this call is costing us?  Go on, have a guess.
+[[8|Cost Question Correct]]
+[[Something else|Cost Question Incorrect]]</tw-passagedata><tw-passagedata pid="14" name="Cost Question Correct" tags="" position="432,1157" size="100,100">That&#39;s right, 8 pounds for a single phone call.
+[[Auto transition|Dispatcher Inform About Vet]] </tw-passagedata><tw-passagedata pid="15" name="Cost Question Incorrect" tags="" position="641,1063" size="100,100">It&#39;s 8 pounds!  8 pounds for a single phone call.
+[[Auto transition|Dispatcher Inform About Vet]] </tw-passagedata><tw-passagedata pid="16" name="Call Vet Correct" tags="" position="709,1441" size="100,100">TODO Audio
+
+(Husband)  Oh alright.
+(Wife)  What are they saying.
+(Husband)  Can you tell me their number?
+[[No|Dispatcher Can&#39;t Give Number]]
+[[Something else|Dispatcher Corridor To Say No]]</tw-passagedata><tw-passagedata pid="17" name="Call Vet Incorrect" tags="" position="1091,1192" size="100,100">What, so you think we should send an ambulance do you?
+[[No|Dispatcher Corridor To Say Call A Vet]]
+[[Something else|Dispatcher Corridor To Say No]]</tw-passagedata><tw-passagedata pid="18" name="Dispatcher Can&#39;t Give Number" tags="" position="673,1599" size="100,100">TODO Audio
+
+Can&#39;t they just google it?
+[[Auto transition|Theres Nothing You Can Do Question]]</tw-passagedata><tw-passagedata pid="19" name="Dispatcher Corridor To Say No" tags="" position="1281,1641" size="100,100">TODO Audio
+
+What are you talking about!  No.  He needs to Google it!  Just tell him to search online.
+[[You need to search online|Theres Nothing You Can Do Question]] 
+[[Something else|Dispatcher Ends Call]]</tw-passagedata><tw-passagedata pid="20" name="Theres Nothing You Can Do Question" tags="" position="776,1760" size="100,100">TODO Audio
+
+So there&#39;s nothing you can do?  Please?
+
+[[No|They Wont Help]]
+[[Something else|Dispatcher Corridor To Say No Again]]</tw-passagedata><tw-passagedata pid="21" name="They Wont Help" tags="" position="696,2102" size="100,100">TODO Audio
+
+(Husband)  They won&#39;t help up us, Jocelyn!  Can you turn on the computer?  We need to search on the internet for a vet.
+(Wife)  We don&#39;t know any vets!
+(Husband)  I know, I know!  Alright, thank you very much, I hope we haven&#39;t taken up too much of your time.  Tell you what, you remind a lot of one of my grandchildren - she&#39;s off doing something in medicine too you know-
+(Dispatcher)  Say bye.  Now.
+[[Bye|Bye Correct]]
+[[Something else|Dispatcher Post Call]]</tw-passagedata><tw-passagedata pid="22" name="Dispatcher Corridor To Say No Again" tags="" position="983,1861" size="100,100">TODO Audio
+
+You want to send an ambulance out for a cat?
+[[No|Dispatcher Tell Them That]]
+[[Something else|Dispatcher Ends Call]]</tw-passagedata><tw-passagedata pid="23" name="Bye Correct" tags="" position="663,2273" size="100,100">Bye now!
+[[Auto transition|Dispatcher Post Call]] </tw-passagedata><tw-passagedata pid="24" name="Dispatcher Post Call" tags="" position="881,2325" size="100,100">Well, you&#39;ve got to laugh, don&#39;t you.  You know, if we&#39;d actually sent an ambulance that would have cost us 150 quid.</tw-passagedata><tw-passagedata pid="25" name="Dispatcher Tell Them That" tags="" position="886,1987" size="100,100">Okay then, tell them that we&#39;re not sending an ambulance.
+[[We&#39;re not sending an ambulance|They Wont Help]]
+[[Something else|Dispatcher Ends Call]]</tw-passagedata><tw-passagedata pid="26" name="Dispatcher Ends Call" tags="" position="1294,2338" size="100,100">TODO Audio
+
+(Dispatcher)  Hello I&#39;m with the Ambulance Service too.  We will not be sending an ambulance to you today.  Alright, do you understand?
+(Husband)  Okay, yes, yes I understand.  Bye now.
+(Dispatcher)  You do realise that if we&#39;d sent an ambulance for their cat it would have cost us 150 quid.
+
+
+</tw-passagedata><tw-passagedata pid="27" name="Dispatcher Corridor To Say Call A Vet" tags="" position="981,1322" size="100,100">Okay, so tell them again, they need to call a vet.
+[[You need to call a vet|Call Vet Correct]]
+[[Something else|Dispatcher Corridor To Say No]]</tw-passagedata></tw-storydata>

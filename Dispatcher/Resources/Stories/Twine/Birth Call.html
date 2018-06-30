@@ -1,0 +1,171 @@
+<tw-storydata name="Birth Call" startnode="1" creator="Twine" creator-version="2.2.1" ifid="0AD8E7B2-C975-4192-95BC-51BC952F2099" zoom="1" format="Twison" format-version="0.0.1" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">
+
+
+
+
+
+
+
+
+</style><script role="script" id="twine-user-script" type="text/twine-javascript">
+
+
+
+
+
+
+
+
+</script><tw-passagedata pid="1" name="Dispatcher Ready Question" tags="" position="673,82" size="100,100">Phone Rings.
+
+Right, first phone call.  Are you ready?
+[[Yes|Player Ready Yes]]
+[[Something else|Player Ready No]]</tw-passagedata><tw-passagedata pid="2" name="Player Ready Yes" tags="" position="598,232" size="100,100">Great, when you&#39;re ready to answer say Ambulance Emergency, tell me exactly what&#39;s happened.
+[[AA Emergency, tell me what&#39;s happened|Player Tell Me Whats Happened Correct]]
+[[Something else|Player Tell Me Whats Happened Incorrect]]</tw-passagedata><tw-passagedata pid="3" name="Player Ready No" tags="" position="830,122" size="100,100">Ok, gather your thoughts.  When you&#39;re ready say Ambulance Emergency, tell me exactly what&#39;s happened.
+[[AA Emergency, tell me exactly what&#39;s happened|Player Tell Me Whats Happened Correct]]
+[[Something else|Player Tell Me Whats Happened Incorrect]]</tw-passagedata><tw-passagedata pid="4" name="Player Tell Me Whats Happened Correct" tags="" position="643,380" size="100,100">(Father)  Hello there, my partner is... well, she&#39;s having our baby a bit quicker than expected!  I think she might need an ambulance to get her to hospital.  She&#39;s-
+
+(Dispatcher)  Can you find out if he&#39;s with her now.
+[[Are you with her now?|Player Caller With Partner Correct]]
+[[Something else|Player Caller With Partner Incorrect]]</tw-passagedata><tw-passagedata pid="5" name="Player Tell Me Whats Happened Incorrect" tags="" position="951,254" size="100,100">Remember, AA Emergency, tell me exactly what&#39;s happened.
+[[AA Emergency, tell me exactly what&#39;s happened|Player Tell Me Whats Happened Correct]]
+[[Something else|Dispatcher Corridor Tell Me Whats Happened]]</tw-passagedata><tw-passagedata pid="6" name="Dispatcher Corridor Tell Me Whats Happened" tags="" position="1093,389" size="100,100">Alright, I&#39;ll do this one.  Listen to me.  Ambulance Emergency, tell me exactly what&#39;s happened.
+[[Auto transition|Player Tell Me Whats Happened Correct]]</tw-passagedata><tw-passagedata pid="7" name="Player Asks Mothers Age (Age Branch)" tags="" position="768,973" size="100,100">(Father)  She&#39;s 30.
+
+(Dispatcher)  Find out how many weeks pregnant the mother is.
+[[How many weeks pregnant is the mother?|Player Asks How Many Weeks Pregnant (Age Branch)]]
+[[Something else|Dispatcher Corridor Ask How Many Weeks Pregnant (Age Branch)]]</tw-passagedata><tw-passagedata pid="8" name="Player Asks How Many Weeks Pregnant (Weeks Pregnant Branch)" tags="" position="531,972" size="100,100">(Father)  She&#39;s almost 41 weeks and very cross about it.
+
+(Dispatcher)  Ask him how old the mum is.
+[[How old is the mother?|Player Asks Mothers Age (Weeks Pregnant Branch)]]
+[[Something else|Dispatcher Corridor Mothers Age (Weeks Pregnant Branch)]]</tw-passagedata><tw-passagedata pid="9" name="Dispatcher Prompts To Ask Age" tags="" position="984,896" size="100,100">Ask him how old the mum is.
+[[How old is the mother?|Player Asks Mothers Age (Age Branch)]] 
+[[Something else|Dispatcher Corridor Asks Mothers Age]]</tw-passagedata><tw-passagedata pid="10" name="Player Caller With Partner Correct" tags="" position="718,706" size="100,100">(Father)  Yes, I am.  Myself, her sister and our dog&#39;s trying to get in through the door.  I&#39;ve shut it outside, don&#39;t worry-
+
+(Dispatcher)  OK we need to know mum&#39;s age and how many weeks pregnant she is...
+
+*Pause*
+
+Actually, only ask one to start with, we don&#39;t want to overwhelm him.
+
+[[How old is the mother?|Player Asks Mothers Age (Age Branch)]]
+[[How many weeks pregant is the mother?|Player Asks How Many Weeks Pregnant (Weeks Pregnant Branch)]]
+[[Something else|Dispatcher Prompts To Ask Age]]</tw-passagedata><tw-passagedata pid="11" name="Player Caller With Partner Incorrect" tags="" position="916,540" size="100,100">Come on, focus, if he&#39;s not with her that really changes what we can do to help her over the phone.  Ask him again if he&#39;s with her.
+[[Are you with your partner?|Player Caller With Partner Correct]] 
+[[Something else|Dispatcher Corridor Caller With Partner]]</tw-passagedata><tw-passagedata pid="12" name="Dispatcher Corridor Caller With Partner" tags="" position="979,697" size="100,100">So are you with your partner at the moment?
+[[Auto transition|Player Caller With Partner Correct]] </tw-passagedata><tw-passagedata pid="13" name="Dispatcher Corridor Asks Mothers Age" tags="" position="997,1035" size="100,100">How old is the mum?
+[[Auto transition|Player Asks Mothers Age (Age Branch)]] </tw-passagedata><tw-passagedata pid="14" name="Player Asks How Many Weeks Pregnant (Age Branch)" tags="" position="798,1415" size="100,100">She&#39;s almost 41 weeks and very cross about it.
+[[Auto transition|Dispatcher Where Are They Now Question]] </tw-passagedata><tw-passagedata pid="15" name="Player Asks Mothers Age (Weeks Pregnant Branch)" tags="" position="653,1420" size="100,100">She&#39;s 30.
+[[Auto transition|Dispatcher Where Are They Now Question]]</tw-passagedata><tw-passagedata pid="16" name="Dispatcher Corridor Mothers Age (Weeks Pregnant Branch)" tags="" position="504,1421" size="100,100">How old is the mother?
+[[Auto transition|Dispatcher Where Are They Now Question]]</tw-passagedata><tw-passagedata pid="17" name="Dispatcher Corridor Ask How Many Weeks Pregnant (Age Branch)" tags="" position="978,1229" size="100,100">How many weeks pregnant is mum?
+[[Auto transition|Player Asks How Many Weeks Pregnant (Age Branch)]] </tw-passagedata><tw-passagedata pid="18" name="Dispatcher Where Are They Now Question" tags="" position="674,1631" size="100,100">Right, the next thing we need to find out is where they currently are.
+[[Where are you?|Player Where Are They Now Correct]]
+[[Something else|Player Where Are They Now Incorrect]]</tw-passagedata><tw-passagedata pid="19" name="Player Where Are They Now Correct" tags="" position="575,1767" size="100,100">We&#39;re in Hampstead at 21 East Way.
+[[Auto transition|Dispatcher Can We See Baby Question]]</tw-passagedata><tw-passagedata pid="20" name="Player Where Are They Now Incorrect" tags="" position="806,1768" size="100,100">(Caller)  I&#39;ve told you how many weeks pregnant my partner is and I do really think we need an ambulance.  We&#39;re at 21 East Way in Hampstead.  
+[[Auto transition|Dispatcher Can We See Baby Question]] </tw-passagedata><tw-passagedata pid="21" name="Dispatcher Can We See Baby Question" tags="" position="688,1911" size="100,100">Alright, find out if any of the baby is visible because he might have to deliver it himself.
+[[Is any of the baby visible?|Player Can We See Baby Correct]]
+[[Something else|Player Can We See Baby Incorrect]]</tw-passagedata><tw-passagedata pid="22" name="Player Can We See Baby Correct" tags="" position="625,2215" size="100,100">(Father)  Yes, I can see the top of the head.  It&#39;s coming alright!
+
+(Dispatcher)  OK, based on the information we have should we send an ambulance?
+[[Yes|Player Send Ambulance Correct]]
+[[No|Player Send Ambulance Incorrect]]</tw-passagedata><tw-passagedata pid="23" name="Player Can We See Baby Incorrect" tags="" position="824,2030" size="100,100">It&#39;s important we know this for the paramedics.  Find out if any of the baby is visible.
+[[Is any of the baby visible?|Player Can We See Baby Correct]] 
+[[Something else|Dispatcher Corridors Can We See Baby]]</tw-passagedata><tw-passagedata pid="24" name="Dispatcher Corridors Can We See Baby" tags="" position="1023,2126" size="100,100">Can you see any of the baby?
+[[Auto transition|Player Can We See Baby Correct]] </tw-passagedata><tw-passagedata pid="25" name="Player Send Ambulance Correct" tags="" position="700,2417" size="100,100">Cool, yeah I agree. So, because the baby&#39;s crowning they definitely don&#39;t have enough time to get a taxi.  I reckon Dad&#39;s going to have to deliver the baby himself. So really the ambulance is needed for aftercare.  
+
+Tell him to stay on the line and we&#39;ll tell him exactly what to do next.
+[[Stay on the line, we&#39;ll tell you what to do|Player Stay On The Line Correct]]
+[[Something else|Player Stay On The Line Incorrect]]</tw-passagedata><tw-passagedata pid="26" name="Player Send Ambulance Incorrect" tags="" position="945,2345" size="100,100">(Incredulous)  I&#39;ll mark that down, but I think it&#39;s high enough priority that the CTM is going to overule you on this one.
+
+(Exasperated)  Tell him to stay on the line and we&#39;ll tell him what to do next.
+[[Stay on the line and we&#39;ll tell you what to do next|Player Stay On The Line Correct]] 
+[[Something else|Player Stay On The Line Incorrect]]</tw-passagedata><tw-passagedata pid="27" name="Player Stay On The Line Correct" tags="" position="746,2658" size="100,100">(Father)  Yes ok... When are the paramedics getting here?  I think it might be about to happen.  Do you think I&#39;m gonna... OH MY GOD AM I GONNA HAVE TO?!-
+
+[[Auto Transition|Dispatcher Baby Slippery Instruction]]</tw-passagedata><tw-passagedata pid="28" name="Player Stay On The Line Incorrect" tags="" position="972,2659" size="100,100">(Caller)  Hi there, just wondering if there&#39;s anything I should be doing because I think the baby&#39;s about to come... OH MY GOD AM I GONNA HAVE TO-?!
+[[Auto transition|Dispatcher Baby Slippery Instruction]] </tw-passagedata><tw-passagedata pid="29" name="Dispatcher Baby Slippery Instruction" tags="" position="908,2787" size="100,100">Yep!  Tell him the baby&#39;s gonna be slippery!
+[[Baby&#39;s gonna be slippery|Dispatcher Where To Hold Baby Instruction]]
+[[Something else|Player Baby Slippery Instruction Incorrect]]</tw-passagedata><tw-passagedata pid="30" name="Player Baby Slippery Instruction Incorrect" tags="" position="1057,2899" size="100,100">(Caller)  Are you saying I&#39;m gonna have to deliver my own baby?!!!
+(Dispatcher)  We can&#39;t let him drop the baby.  Tell him it&#39;s going to be slippery.
+[[The baby will be slippery|Dispatcher Where To Hold Baby Instruction]] 
+[[Something else|Dispatcher Corridors Baby Slippery Instruction]]</tw-passagedata><tw-passagedata pid="31" name="Dispatcher Where To Hold Baby Instruction" tags="" position="894,3176" size="100,100">OK so, Dad needs to support the head and hold the hips and legs tight.  Tell him that quickly!
+[[Support the head and hold the hips and legs tight|Player Where To Hold Baby Instruction Correct]]
+[[Something else|Player Where To Hold Baby Instruction Incorrect]]</tw-passagedata><tw-passagedata pid="32" name="Player Where To Hold Baby Instruction Correct" tags="" position="818,3327" size="100,100">(Father)  Okay, thanks.  Baby slippery - head, legs and hips.  Got it.  Here we go.
+
+*Sounds of phone clattering to floor/surface*
+*Lady screaming*
+*Another lady encouraging her*
+
+(Dispatcher)  Alright, can we check on Dad please.
+
+[[Are you ok?|Player Check On Caller Shout]]
+[[Something else|Player Check On Caller Shout]]</tw-passagedata><tw-passagedata pid="33" name="Player Where To Hold Baby Instruction Incorrect" tags="" position="968,3327" size="100,100">OK, we&#39;re on a clock here and it&#39;s a lot to remember.  I&#39;ll do this one.  
+[Insert introduction if necessary]
+
+Sir, make sure you support the baby&#39;s head and hold the hips and legs tight.  Make sure you don&#39;t drop the baby!
+
+[[Auto transition|Player Where To Hold Baby Instruction Correct]] </tw-passagedata><tw-passagedata pid="34" name="Dispatcher Corridors Baby Slippery Instruction" tags="" position="1057,3049" size="100,100">It&#39;s really important that you know that the baby is going to be slippery.
+[[Auto transition|Dispatcher Where To Hold Baby Instruction]] </tw-passagedata><tw-passagedata pid="35" name="Player Check On Caller Shout" tags="" position="896,3513" size="100,100">*Audio of delivery*
+
+Ok, he&#39;s put us down - try again.  Shout this time - they need to hear you.
+
+[[Are you ok?|Caller Birth]]
+[[Something else|Caller Birth]]</tw-passagedata><tw-passagedata pid="36" name="Caller Birth" tags="" position="892,3671" size="100,100">*Lady screams*
+*Father laughs*
+*Phone clatters*
+
+(Sister)  Hello?  Hi, I&#39;m Charlotte&#39;s sister.  Baby&#39;s out!  Baby&#39;s out!
+
+(Dispatcher)  Is the baby crying or breathing?
+
+[[Is the baby crying or breathing?|Player Baby Crying Breathing Question Correct]]
+[[Something else|Baby Cries]]</tw-passagedata><tw-passagedata pid="37" name="Player Baby Crying Breathing Question Correct" tags="" position="745,3920" size="100,100">(Father)  I don&#39;t think so.
+(Sister)  No!
+(Dispatcher)  Ok can they see anything wrong?
+
+[[Is anything obviously wrong?|Player Is Anything Wrong Correct]]
+[[Something else|Callers Panic What Do We Do]]</tw-passagedata><tw-passagedata pid="38" name="Player Is Anything Wrong Correct" tags="" position="657,4113" size="100,100">(Sister and Father)No!
+
+[[Auto transition|Dispatcher Rub Babys Back Instruction]]</tw-passagedata><tw-passagedata pid="39" name="Callers Panic What Do We Do" tags="" position="835,4124" size="100,100">What do we do?!
+
+[[Auto transition|Dispatcher Rub Babys Back Instruction]] </tw-passagedata><tw-passagedata pid="40" name="Dispatcher Rub Babys Back Instruction" tags="" position="744,4457" size="100,100">Alright, they need to rub baby&#39;s back briskly with a towel for 30 seconds.  Tell them now.
+
+[[Rub the baby&#39;s back briskly with a towel for 30 seconds|Player Rub Babys Back Instruction Correct]]
+[[Something else|Player Rub Babys Back Instruction Incorrect]]</tw-passagedata><tw-passagedata pid="41" name="Player Rub Babys Back Instruction Correct" tags="" position="735,4739" size="100,100">(Sister)  Okay, Tim - rub baby&#39;s back for with a towel for 30 seconds.
+(Father)  Come on little one.  Come on, come on.
+
+[[Auto transition|Baby Cries]]</tw-passagedata><tw-passagedata pid="42" name="Player Rub Babys Back Instruction Incorrect" tags="" position="841,4608" size="100,100">Alright, let&#39;s get this baby breathing.  Hi!  You need to rub the baby&#39;s back with a clean towel for 30 seconds.  Can you do that for me now?
+
+(Father)  Come on little one.  Come on, come on.
+
+[[Auto transition|Baby Cries]]</tw-passagedata><tw-passagedata pid="43" name="Baby Cries" tags="" position="941,4924" size="100,100">*Silence*
+*Baby cries*
+
+(Dispatcher)  There we go!
+(Sister)  Baby&#39;s crying, baby&#39;s crying!
+(Father)  Hey there little one.
+
+(Dispatcher)  In a sec we&#39;ll give them a few more instructions, but first is it a boy or a girl?
+
+[[Is it a boy or a girl?|Player Boy Or Girl Question]]
+[[Something else|Player Boy Or Girl Question]]</tw-passagedata><tw-passagedata pid="44" name="Player Boy Or Girl Question" tags="" position="907,5139" size="100,100">(Sister)  It&#39;s a little boy!
+
+(Dispatcher)  Congratulate them!
+
+[[Congratulations!|Player Congratulations Correct]]
+[[Something else|Paramedics Arrive]]</tw-passagedata><tw-passagedata pid="45" name="Player Congratulations Correct" tags="" position="722,5293" size="100,100">(Sister)  Thank you so much!
+(Father)  Tell you what, I don&#39;t think I&#39;ve been so scared as I was when you told me I had to deliver the baby.  Thanks for being so calm!
+(Sister)  [Insert Baby Talk]
+
+[[Auto transition|Paramedics Arrive]]</tw-passagedata><tw-passagedata pid="46" name="Paramedics Arrive" tags="" position="962,5399" size="100,100">*Dog Barks*
+
+(Sister)  HI!  Hello!  Yes, we&#39;re in here.  Don&#39;t mind the dog, she won&#39;t hurt you.  We&#39;re in here!
+
+(Dispatcher)  Sounds like the paramedics.  Are they with them now?
+
+[[Are the paramedics there?|Player Paramedics Arrived Question Correct]]
+[[Something else|Player Paramedics Arrived Question Incorrect]]</tw-passagedata><tw-passagedata pid="47" name="Player Paramedics Arrived Question Correct" tags="" position="808,5552" size="100,100">(Sister)  Yeah they&#39;re just coming in to the house now.
+(Dispatcher)  Okay, let them go now.  They did really well.  Tell them well done.
+
+[[Well done!|Well Done Correct]]
+[[Something else|Well Done Incorrect]]</tw-passagedata><tw-passagedata pid="48" name="Player Paramedics Arrived Question Incorrect" tags="" position="1085,5617" size="100,100">(Sister)  Ok the paramedics are here now, so we&#39;ve got to go.  Bye!</tw-passagedata><tw-passagedata pid="49" name="Well Done Correct" tags="" position="798,5707" size="100,100">Thanks so much, bye bye now!</tw-passagedata><tw-passagedata pid="50" name="Well Done Incorrect" tags="" position="944,5710" size="100,100">We have to go now, bye!</tw-passagedata></tw-storydata>
