@@ -25,8 +25,8 @@ namespace Dispatcher.IntentHandlers
         #region Intent Handler Abstract Implementations
         
         /// <summary>
-        /// The behaviour when the game first starts.
-        /// This is currently to play an introduction.
+        /// The behaviour when we want to start the game.
+        /// Begins the story from the beginning.
         /// </summary>
         /// <param name="intent"></param>
         /// <param name="session"></param>

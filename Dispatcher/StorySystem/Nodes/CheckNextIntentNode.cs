@@ -67,10 +67,12 @@ namespace Dispatcher.StorySystem.Nodes
         {
             if (ValidIntents.ContainsKey(intent.Name))
             {
+                lambdaContext.Logger.LogLine("Found intent " + intent.Name + " with node index " + ValidIntents[intent.Name]);
                 return Story.Nodes[ValidIntents[intent.Name]];
             }
             else
             {
+                lambdaContext.Logger.LogLine("No intent found.  Using node index " + IncorrectIntentNextNodeIndex);
                 return Story.Nodes[IncorrectIntentNextNodeIndex];
             }
         }

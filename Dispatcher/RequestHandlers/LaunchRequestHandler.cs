@@ -7,6 +7,7 @@ using Alexa.NET.Request.Type;
 using Alexa.NET.Response.Ssml;
 using Alexa.NET;
 using Amazon.Lambda.Core;
+using Dispatcher.StorySystem;
 
 namespace Dispatcher.RequestHandlers
 {
@@ -31,13 +32,7 @@ namespace Dispatcher.RequestHandlers
         /// <returns></returns>
         public override SkillResponse HandleRequest(SkillRequest request, ILambdaContext lambdaContext)
         {
-            Speech speech = new Speech();
-            speech.Elements.Add(new Audio("https://s3-eu-west-1.amazonaws.com/nine-nine-nine/General/LaunchMessage.mp3"));
-
-            SkillResponse response = ResponseBuilder.Tell(speech);
-            response.Response.ShouldEndSession = false;
-
-            return response;
+            return Story.CreateResponseForNode(0, null, request.Session, lambdaContext);
         }
 
         #endregion

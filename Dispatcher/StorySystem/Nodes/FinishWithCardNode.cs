@@ -19,20 +19,33 @@ namespace Dispatcher.StorySystem.Nodes
 
         public string Content { get; private set; }
 
+        public string SmallImageUrl { get; private set; }
+
+        public string LargeImageUrl { get; private set; }
+
         #endregion
 
-        public FinishWithCardNode(string title, string content, SpeechBuilder speechBuilder) : 
+        public FinishWithCardNode(string title, string content, string smallImageUrl, string largeImageUrl, SpeechBuilder speechBuilder) : 
             base(-1, speechBuilder)
         {
             Title = title;
             Content = content;
+            SmallImageUrl = smallImageUrl;
+            LargeImageUrl = largeImageUrl;
         }
 
         #region Virtual Overrides
 
         public override SkillResponse CreateResponse()
         {
-            SkillResponse response = ResponseBuilder.TellWithCard(Speech, Title, Content);
+            SkillResponse response = ResponseBuilder.Tell(Speech);
+            StandardCard card = new StandardCard();
+            card.Title = Title;
+            card.Content = Content;
+            card.Image = new CardImage();
+            card.Image.SmallImageUrl = SmallImageUrl;
+            card.Image.LargeImageUrl = LargeImageUrl;
+            response.Response.Card = card;
             response.Response.ShouldEndSession = true;
 
             return response;
