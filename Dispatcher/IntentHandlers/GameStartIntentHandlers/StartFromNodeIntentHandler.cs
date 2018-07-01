@@ -26,10 +26,14 @@ namespace Dispatcher.IntentHandlers
 
         #endregion
 
+        #region Intent Handler Abstract Implementations
+
         public override SkillResponse HandleIntent(Intent intent, Session session, ILambdaContext lambdaContext)
         {
             long nodeIndex = long.Parse(intent.Slots["NodeIndex"].Value);
             return Story.CreateResponseForNode(nodeIndex, intent, session, lambdaContext);
         }
+
+        #endregion
     }
 }

@@ -18,6 +18,26 @@ namespace Dispatcher
         /// </summary>
         public const string NoIntentName = "AMAZON.NoIntent";
 
+        /// <summary>
+        /// The name of the Help intent on AWS lambda.
+        /// </summary>
+        public const string HelpIntentName = "AMAZON.HelpIntent";
+
+        /// <summary>
+        /// The name of the Stop intent on AWS lambda.
+        /// </summary>
+        public const string StopIntentName = "AMAZON.StopIntent";
+
+        /// <summary>
+        /// The name of the Start Over intent on AWS lambda.
+        /// </summary>
+        public const string StartOverIntentName = "AMAZON.StartOverIntent";
+
+        /// <summary>
+        /// The name of the Cancel intent on AWS lambda.
+        /// </summary>
+        public const string CancelIntentName = "AMAZON.CancelIntent";
+
         #endregion
 
         #region Story Start Intent Names

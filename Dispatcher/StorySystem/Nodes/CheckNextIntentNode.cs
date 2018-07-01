@@ -60,7 +60,15 @@ namespace Dispatcher.StorySystem.Nodes
         public override void ModifySessionAttributes(Dictionary<string, object> attributes, Intent intent, Session session, ILambdaContext lambdaContext)
         {
             base.ModifySessionAttributes(attributes, intent, session, lambdaContext);
-            attributes.Add(ParameterName, ValidIntents.ContainsKey(intent.Name));
+
+            if (!attributes.ContainsKey(ParameterName))
+            {
+                attributes.Add(ParameterName, ValidIntents.ContainsKey(intent.Name));
+            }
+            else
+            {
+                attributes[ParameterName] = ValidIntents.ContainsKey(intent.Name);
+            }
         }
 
         public override BaseNode GetNextNode(Intent intent, Session session, ILambdaContext lambdaContext)

@@ -156,7 +156,7 @@ namespace Dispatcher.StorySystem
             new SpeechNode(43, new SpeechBuilder().
                 Add(new Audio(Player_Baby_Slippery_Instruction_Incorrect))),
             // 43 - Baby will be slippery (again)
-            new CheckNextIntentNode(45, BabyWillBeSlipperyIntent, 44, "BabyWillBeSlipperyAgain_Correct"),
+            new CheckNextIntentNode(41, BabyWillBeSlipperyIntent, 44, "BabyWillBeSlipperyAgain_Correct"),
             // 44 - Dispatcher Corridors Baby Slippery Instruction Correct
             new SpeechNode(45, new SpeechBuilder().
                 Add(new Audio(Dispatcher_Corridors_Baby_Slippery_Instruction)).

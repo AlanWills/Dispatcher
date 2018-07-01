@@ -22,7 +22,10 @@ namespace Dispatcher.RequestHandlers
         private static List<IntentHandler> CustomIntentHandlers { get; set; } = new List<IntentHandler>()
         {
             new PlayGameIntentHandler(),
-            new StartFromNodeIntentHandler()
+            new StartFromNodeIntentHandler(),
+            new HelpIntentHandler(),
+            new StopIntentHandler(),
+            new StartOverIntentHandler()
         };
 
         /// <summary>
