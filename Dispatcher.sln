@@ -35,13 +35,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Twinary", "RealTalkEngine\T
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{9E357D42-CA95-43FA-92E1-A7269C6EF447}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestTwinary", "RealTalkEngine\Tests\TestTwinary\TestTwinary.csproj", "{FA68A302-E4DD-40BC-B950-469BBF489857}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Twinary.Tests", "RealTalkEngine\Tests\Twinary.Tests\Twinary.Tests.csproj", "{FA68A302-E4DD-40BC-B950-469BBF489857}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CelesteEngine", "CelesteEngine", "{17DCAFF2-B076-4E11-A07E-CA998D73DF80}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CelTestSharp", "RealTalkEngine\CelesteEngine\CelTestSharp\CelTestSharp.csproj", "{7519C44E-F90A-4D3E-9C9F-D96CC20FAC67}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestRealTalkEngine", "RealTalkEngine\Tests\TestRealTalkEngine\TestRealTalkEngine.csproj", "{BEBDF677-59CC-4E43-855C-7FAB0D6CAB28}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RealTalkEngine.Tests", "RealTalkEngine\Tests\RealTalkEngine.Tests\RealTalkEngine.Tests.csproj", "{BEBDF677-59CC-4E43-855C-7FAB0D6CAB28}"
 	ProjectSection(ProjectDependencies) = postProject
 		{7519C44E-F90A-4D3E-9C9F-D96CC20FAC67} = {7519C44E-F90A-4D3E-9C9F-D96CC20FAC67}
 		{22508ABB-DE46-479D-933D-0B546364A044} = {22508ABB-DE46-479D-933D-0B546364A044}
