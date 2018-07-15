@@ -27,9 +27,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dispatcher", "Dispatcher\Di
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dispatcher.Tests", "Dispatcher.Tests\Dispatcher.Tests.csproj", "{69522ABD-5467-47B1-8831-27DAE5426968}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AudioFormatter", "RealTalkEngine\AudioFormatter\AudioFormatter.csproj", "{211E8F63-151E-4ECF-8761-138A3171B078}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RealTalkAudioFormatter", "RealTalkEngine\AudioFormatter\RealTalkAudioFormatter.csproj", "{211E8F63-151E-4ECF-8761-138A3171B078}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AudioConstsGenerator", "RealTalkEngine\AudioConstsGenerator\AudioConstsGenerator.csproj", "{B0BF83FE-FFFE-4C8F-B43F-54E5551E35AA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RealTalkAudioConstsGenerator", "RealTalkEngine\AudioConstsGenerator\RealTalkAudioConstsGenerator.csproj", "{B0BF83FE-FFFE-4C8F-B43F-54E5551E35AA}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Twinary", "RealTalkEngine\Twinary\Twinary.csproj", "{2EEA131E-B345-49BA-BBD5-33E39CBD3282}"
 EndProject
@@ -71,6 +71,16 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RealTalkSkillMessaging", "RealTalkEngine\RealTalkSkillMessaging\RealTalkSkillMessaging.csproj", "{932ABAAB-50A1-47C6-9D49-0CAFF561EB6A}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "JsonStories", "JsonStories", "{C866C684-2759-4438-9712-35C20602F440}"
+	ProjectSection(SolutionItems) = preProject
+		RealTalkEngine\Resources\Json Stories\FragmentsOfSkullMaster.json = RealTalkEngine\Resources\Json Stories\FragmentsOfSkullMaster.json
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RealTalkStoryFormatter", "RealTalkEngine\RealTalkStoryFormatter\RealTalkStoryFormatter.csproj", "{26D83F42-17E2-4108-BCBF-59468DF5B738}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BinaryStories", "BinaryStories", "{96721D3F-9640-4D05-B761-A9D83A0C6337}"
+	ProjectSection(SolutionItems) = preProject
+		RealTalkEngine\Resources\Binary Stories\FragmentsOfSkullMaster.data = RealTalkEngine\Resources\Binary Stories\FragmentsOfSkullMaster.data
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -150,6 +160,10 @@ Global
 		{932ABAAB-50A1-47C6-9D49-0CAFF561EB6A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{932ABAAB-50A1-47C6-9D49-0CAFF561EB6A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{932ABAAB-50A1-47C6-9D49-0CAFF561EB6A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{26D83F42-17E2-4108-BCBF-59468DF5B738}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{26D83F42-17E2-4108-BCBF-59468DF5B738}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{26D83F42-17E2-4108-BCBF-59468DF5B738}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{26D83F42-17E2-4108-BCBF-59468DF5B738}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -173,6 +187,8 @@ Global
 		{9C41AA66-34D4-4CAA-9770-E17328400E19} = {DE0274C4-AF7E-48FF-81E8-BAD7D2BD88DB}
 		{932ABAAB-50A1-47C6-9D49-0CAFF561EB6A} = {975B78B3-7C42-472A-AF8C-8BD17A4501A4}
 		{C866C684-2759-4438-9712-35C20602F440} = {DE0274C4-AF7E-48FF-81E8-BAD7D2BD88DB}
+		{26D83F42-17E2-4108-BCBF-59468DF5B738} = {975B78B3-7C42-472A-AF8C-8BD17A4501A4}
+		{96721D3F-9640-4D05-B761-A9D83A0C6337} = {DE0274C4-AF7E-48FF-81E8-BAD7D2BD88DB}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F4ED31B5-BFC1-4D90-9076-AEA45386A433}
