@@ -54,8 +54,23 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Resources", "Resources", "{DE0274C4-AF7E-48FF-81E8-BAD7D2BD88DB}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TwineStories", "TwineStories", "{9C41AA66-34D4-4CAA-9770-E17328400E19}"
+	ProjectSection(SolutionItems) = preProject
+		RealTalkEngine\Resources\Twine Stories\Ed's Twine\Stories\FragmentsOfSkullMaster.html = RealTalkEngine\Resources\Twine Stories\Ed's Twine\Stories\FragmentsOfSkullMaster.html
+		RealTalkEngine\Resources\Twine Stories\Ed's Twine\Stories\johnny seedbags.html = RealTalkEngine\Resources\Twine Stories\Ed's Twine\Stories\johnny seedbags.html
+		RealTalkEngine\Resources\Twine Stories\Ed's Twine\Stories\Love Island vertical slice.html = RealTalkEngine\Resources\Twine Stories\Ed's Twine\Stories\Love Island vertical slice.html
+		RealTalkEngine\Resources\Twine Stories\Ed's Twine\Stories\NecroTestCards.html = RealTalkEngine\Resources\Twine Stories\Ed's Twine\Stories\NecroTestCards.html
+		RealTalkEngine\Resources\Twine Stories\Ed's Twine\Stories\NecroWorldBuild.html = RealTalkEngine\Resources\Twine Stories\Ed's Twine\Stories\NecroWorldBuild.html
+		RealTalkEngine\Resources\Twine Stories\Ed's Twine\Stories\Resistjam Story.html = RealTalkEngine\Resources\Twine Stories\Ed's Twine\Stories\Resistjam Story.html
+		RealTalkEngine\Resources\Twine Stories\Ed's Twine\Stories\Risky business.html = RealTalkEngine\Resources\Twine Stories\Ed's Twine\Stories\Risky business.html
+		RealTalkEngine\Resources\Twine Stories\Ed's Twine\Stories\substory idea.html = RealTalkEngine\Resources\Twine Stories\Ed's Twine\Stories\substory idea.html
+		RealTalkEngine\Resources\Twine Stories\the invader.html = RealTalkEngine\Resources\Twine Stories\the invader.html
+		RealTalkEngine\Resources\Twine Stories\Ed's Twine\Stories\TXF performance example.html = RealTalkEngine\Resources\Twine Stories\Ed's Twine\Stories\TXF performance example.html
+		RealTalkEngine\Resources\Twine Stories\Ed's Twine\Stories\UFO.html = RealTalkEngine\Resources\Twine Stories\Ed's Twine\Stories\UFO.html
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RealTalkSkillMessaging", "RealTalkEngine\RealTalkSkillMessaging\RealTalkSkillMessaging.csproj", "{932ABAAB-50A1-47C6-9D49-0CAFF561EB6A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "JsonStories", "JsonStories", "{C866C684-2759-4438-9712-35C20602F440}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -157,6 +172,7 @@ Global
 		{4520B39F-ACD0-433E-B482-F2F71626D954} = {975B78B3-7C42-472A-AF8C-8BD17A4501A4}
 		{9C41AA66-34D4-4CAA-9770-E17328400E19} = {DE0274C4-AF7E-48FF-81E8-BAD7D2BD88DB}
 		{932ABAAB-50A1-47C6-9D49-0CAFF561EB6A} = {975B78B3-7C42-472A-AF8C-8BD17A4501A4}
+		{C866C684-2759-4438-9712-35C20602F440} = {DE0274C4-AF7E-48FF-81E8-BAD7D2BD88DB}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F4ED31B5-BFC1-4D90-9076-AEA45386A433}
