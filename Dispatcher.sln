@@ -82,6 +82,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CelesteEngineBindings", "Re
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CelesteEngineBindingsLib", "RealTalkEngine\CelesteEngine\CelesteEngineBindingsLib\CelesteEngineBindingsLib.csproj", "{5D848227-6467-45C7-B9F7-E34C1A2F7A78}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dispatcher.Sandbox", "Dispatcher.Sandbox\Dispatcher.Sandbox.csproj", "{76BFD69D-5B49-4F87-B4C4-35634EF87820}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -168,6 +170,10 @@ Global
 		{5D848227-6467-45C7-B9F7-E34C1A2F7A78}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5D848227-6467-45C7-B9F7-E34C1A2F7A78}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5D848227-6467-45C7-B9F7-E34C1A2F7A78}.Release|Any CPU.Build.0 = Release|Any CPU
+		{76BFD69D-5B49-4F87-B4C4-35634EF87820}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{76BFD69D-5B49-4F87-B4C4-35634EF87820}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{76BFD69D-5B49-4F87-B4C4-35634EF87820}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{76BFD69D-5B49-4F87-B4C4-35634EF87820}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
