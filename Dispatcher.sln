@@ -84,6 +84,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CelesteEngineBindingsLib", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dispatcher.Sandbox", "Dispatcher.Sandbox\Dispatcher.Sandbox.csproj", "{76BFD69D-5B49-4F87-B4C4-35634EF87820}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SandboxSkill", "RealTalkEngine\SandboxSkill\SandboxSkill.csproj", "{AA7C207A-C54D-41EF-BB86-5147448F5745}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -174,6 +176,10 @@ Global
 		{76BFD69D-5B49-4F87-B4C4-35634EF87820}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{76BFD69D-5B49-4F87-B4C4-35634EF87820}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{76BFD69D-5B49-4F87-B4C4-35634EF87820}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AA7C207A-C54D-41EF-BB86-5147448F5745}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AA7C207A-C54D-41EF-BB86-5147448F5745}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AA7C207A-C54D-41EF-BB86-5147448F5745}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AA7C207A-C54D-41EF-BB86-5147448F5745}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

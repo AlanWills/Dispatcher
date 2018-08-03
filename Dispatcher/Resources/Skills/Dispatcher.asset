@@ -1,4 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Root>
-  <Skill SkillName="Dispatcher" name="" guid="24476e06-e79d-4ee0-9477-ad4367d976d3" />
+  <Skill SkillName="Dispatcher" name="" guid="99c0d1a6-4e8d-44b0-861d-6a68cee3c273">
+    <Intents>
+      <Element value="3f8e6840-455e-4c21-8958-88e716b71639" />
+    </Intents>
+  </Skill>
 </Root>

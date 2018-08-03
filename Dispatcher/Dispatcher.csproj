@@ -19,4 +19,8 @@
     <ProjectReference Include="..\RealTalkEngine\Twinary\Twinary.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Resources\Skills\" />
+  </ItemGroup>
+
 </Project>
