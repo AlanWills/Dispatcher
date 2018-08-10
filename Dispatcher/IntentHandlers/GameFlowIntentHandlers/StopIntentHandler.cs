@@ -34,7 +34,7 @@ namespace Dispatcher.IntentHandlers
         /// <returns></returns>
         public override SkillResponse HandleIntent(Intent intent, Session session, ILambdaContext lambdaContext)
         {
-            SkillResponse response = ResponseBuilder.Tell(new Speech(new Sentence("Thank you for playing.")));
+            SkillResponse response = ResponseBuilder.Tell(new Speech(new Audio(BirthCallAudioConsts.Goodbye)));
             response.Response.ShouldEndSession = true;
 
             return response;
