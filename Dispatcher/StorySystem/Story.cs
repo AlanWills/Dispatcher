@@ -26,7 +26,9 @@ namespace Dispatcher.StorySystem
         public static List<BaseNode> Nodes { get; set; } = new List<BaseNode>()
         {
             // 0 - Dispatcher Ready Question
+            // See the end of the response for skipping the intro
             new SpeechNode(1, new SpeechBuilder().
+                Add(new Audio(Introduction)).
                 Add(new Audio(Dispatcher_Ready_Question))),
             // 1 - Check if player ready
             ConditionNode.CreateYesNoChoiceNode(2, 3),
@@ -256,6 +258,9 @@ namespace Dispatcher.StorySystem
                 "https://s3-eu-west-1.amazonaws.com/rtg-dispatcher/icons/StorkIconSmall.png",
                 "https://s3-eu-west-1.amazonaws.com/rtg-dispatcher/icons/StorkIconLarge.png", new SpeechBuilder().
                 Add(new Audio(Goodbye))),
+            // 75 - Skipped Intro, Dispatcher Ready Question
+            new SpeechNode(1, new SpeechBuilder().
+                Add(new Audio(Dispatcher_Ready_Question))),
         };
 
         #endregion

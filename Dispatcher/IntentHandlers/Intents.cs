@@ -43,6 +43,11 @@ namespace Dispatcher
         #region Story Start Intent Names
 
         /// <summary>
+        /// The name of the Skip intent on AWS lambda.
+        /// </summary>
+        public const string SkipIntentName = "SkipIntent";
+
+        /// <summary>
         /// The name of the PlayGame intent on AWS lambda.
         /// </summary>
         public const string PlayGameIntentName = "PlayGameIntent";

@@ -24,6 +24,7 @@ namespace Dispatcher.RequestHandlers
             new PlayGameIntentHandler(),
             new StartFromNodeIntentHandler(),
             new HelpIntentHandler(),
+            new SkipIntroIntentHandler(),
             new StopIntentHandler(),
             new StartOverIntentHandler()
         };
