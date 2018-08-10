@@ -32,10 +32,8 @@ namespace Dispatcher.RequestHandlers
         /// <returns></returns>
         public override SkillResponse HandleRequest(SkillRequest request, ILambdaContext lambdaContext)
         {
-            lambdaContext.Logger.LogLine("Session ended");
-
             Speech speech = new Speech();
-            speech.Elements.Add(new Sentence("Goodbye"));
+            speech.Elements.Add(new Audio(BirthCallAudioConsts.Goodbye));
             return ResponseBuilder.Tell(speech);
         }
 

@@ -32,10 +32,7 @@ namespace Dispatcher.RequestHandlers
         /// <returns></returns>
         public override SkillResponse HandleRequest(SkillRequest request, ILambdaContext lambdaContext)
         {
-            SkillResponse response = ResponseBuilder.Tell(new Speech(new Audio(BirthCallAudioConsts.Goodbye)));
-            response.Response.ShouldEndSession = false;
-
-            return response;
+            return Story.CreateResponseForNode(0, null, request.Session, lambdaContext);
         }
 
         #endregion

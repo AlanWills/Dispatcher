@@ -228,22 +228,34 @@ namespace Dispatcher.StorySystem
             new SpeechNode(69, new SpeechBuilder().
                 Add(new Audio(Player_Paramedics_Arrived_Question_Correct))),
             // 68 - Player Paramedics Arrived Question Incorrect
-            new FinishWithCardNode("Birth Call Completed", "Thanks to you, Tim and Charlotte's baby was safely delivered!  The password 'Stork' will be useful for later on in the game, so don't forget it.  Stork Artwork: Pedro Alves.", 
-                "https://s3-eu-west-1.amazonaws.com/rtg-dispatcher/icons/StorkIconSmall.png", 
-                "https://s3-eu-west-1.amazonaws.com/rtg-dispatcher/icons/StorkIconLarge.png", new SpeechBuilder().
-                Add(new Audio(Player_Paramedics_Arrived_Question_Incorrect))),
+            new SpeechNode(72, new SpeechBuilder().
+                Add(new Audio(Player_Paramedics_Arrived_Question_Incorrect)).
+                Add(new Audio(Outro)).
+                Add(new Sentence("Would you like to hear the credits?"))),
             // 69 - Well done!
             new CheckNextIntentNode(70, WellDoneIntent, 71, "WellDone_Correct"),
             // 70 - Well Done Correct
-            new FinishWithCardNode("Birth Call Completed", "Thanks to you, Tim and Charlotte's baby was safely delivered!  The password 'Stork' will be useful for later on in the game, so don't forget it.  Stork Artwork: Pedro Alves.",
-                "https://s3-eu-west-1.amazonaws.com/rtg-dispatcher/icons/StorkIconSmall.png",
-                "https://s3-eu-west-1.amazonaws.com/rtg-dispatcher/icons/StorkIconLarge.png", new SpeechBuilder().
-                Add(new Audio(Well_Done_Correct))),
+            new SpeechNode(72, new SpeechBuilder().
+                Add(new Audio(Well_Done_Correct)).
+                Add(new Audio(Outro)).
+                Add(new Sentence("Would you like to hear the credits?"))),
             // 71 - Well Done Incorrect
+            new SpeechNode(72, new SpeechBuilder().
+                Add(new Audio(Well_Done_Incorrect)).
+                Add(new Audio(Outro)).
+                Add(new Sentence("Would you like to hear the credits?"))),
+            // 72 - Does player want to hear the credits
+            ConditionNode.CreateYesNoChoiceNode(73, 74),
+            // 73 - Credits
             new FinishWithCardNode("Birth Call Completed", "Thanks to you, Tim and Charlotte's baby was safely delivered!  The password 'Stork' will be useful for later on in the game, so don't forget it.  Stork Artwork: Pedro Alves.",
                 "https://s3-eu-west-1.amazonaws.com/rtg-dispatcher/icons/StorkIconSmall.png",
                 "https://s3-eu-west-1.amazonaws.com/rtg-dispatcher/icons/StorkIconLarge.png", new SpeechBuilder().
-                Add(new Audio(Well_Done_Incorrect))),
+                Add(new Audio(Credits))),
+            // 74 - No Credits
+            new FinishWithCardNode("Birth Call Completed", "Thanks to you, Tim and Charlotte's baby was safely delivered!  The password 'Stork' will be useful for later on in the game, so don't forget it.  Stork Artwork: Pedro Alves.",
+                "https://s3-eu-west-1.amazonaws.com/rtg-dispatcher/icons/StorkIconSmall.png",
+                "https://s3-eu-west-1.amazonaws.com/rtg-dispatcher/icons/StorkIconLarge.png", new SpeechBuilder().
+                Add(new Audio(Goodbye))),
         };
 
         #endregion
