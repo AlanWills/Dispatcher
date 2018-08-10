@@ -228,19 +228,19 @@ namespace Dispatcher.StorySystem
             new SpeechNode(69, new SpeechBuilder().
                 Add(new Audio(Player_Paramedics_Arrived_Question_Correct))),
             // 68 - Player Paramedics Arrived Question Incorrect
-            new FinishWithCardNode("Birth Call Completed", "Thanks to you, Tim and Charlotte's baby was safely delivered!  The password 'Stork' will be useful for later on in the game, so don't forget it.", 
+            new FinishWithCardNode("Birth Call Completed", "Thanks to you, Tim and Charlotte's baby was safely delivered!  The password 'Stork' will be useful for later on in the game, so don't forget it.  Stork Artwork: Pedro Alves.", 
                 "https://s3-eu-west-1.amazonaws.com/rtg-dispatcher/icons/StorkIconSmall.png", 
                 "https://s3-eu-west-1.amazonaws.com/rtg-dispatcher/icons/StorkIconLarge.png", new SpeechBuilder().
                 Add(new Audio(Player_Paramedics_Arrived_Question_Incorrect))),
             // 69 - Well done!
             new CheckNextIntentNode(70, WellDoneIntent, 71, "WellDone_Correct"),
             // 70 - Well Done Correct
-            new FinishWithCardNode("Birth Call Completed", "Thanks to you, Tim and Charlotte's baby was safely delivered!  The password 'Stork' will be useful for later on in the game, so don't forget it.",
+            new FinishWithCardNode("Birth Call Completed", "Thanks to you, Tim and Charlotte's baby was safely delivered!  The password 'Stork' will be useful for later on in the game, so don't forget it.  Stork Artwork: Pedro Alves.",
                 "https://s3-eu-west-1.amazonaws.com/rtg-dispatcher/icons/StorkIconSmall.png",
                 "https://s3-eu-west-1.amazonaws.com/rtg-dispatcher/icons/StorkIconLarge.png", new SpeechBuilder().
                 Add(new Audio(Well_Done_Correct))),
             // 71 - Well Done Incorrect
-            new FinishWithCardNode("Birth Call Completed", "Thanks to you, Tim and Charlotte's baby was safely delivered!  The password 'Stork' will be useful for later on in the game, so don't forget it.",
+            new FinishWithCardNode("Birth Call Completed", "Thanks to you, Tim and Charlotte's baby was safely delivered!  The password 'Stork' will be useful for later on in the game, so don't forget it.  Stork Artwork: Pedro Alves.",
                 "https://s3-eu-west-1.amazonaws.com/rtg-dispatcher/icons/StorkIconSmall.png",
                 "https://s3-eu-west-1.amazonaws.com/rtg-dispatcher/icons/StorkIconLarge.png", new SpeechBuilder().
                 Add(new Audio(Well_Done_Incorrect))),
