@@ -14,7 +14,7 @@
     "function-memory-size" : 128,
     "function-timeout"     : 15,
     "function-handler"     : "Dispatcher::Dispatcher.Function::FunctionHandler",
-    "function-name"        : "DispatcherSandbox",
+    "function-name"        : "Dispatcher",
     "function-role"        : "arn:aws:iam::065325348020:role/service-role/DispatcherRole",
     "tracing-mode"         : "PassThrough",
     "environment-variables" : ""

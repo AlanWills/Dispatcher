@@ -18,6 +18,8 @@ namespace Dispatcher.StorySystem
     {
         #region Properties and Fields
 
+        public const int SkipNodeIndex = 72;
+
         /// <summary>
         /// The key for the session attribute we use to store the current node index.
         /// </summary>
@@ -230,35 +232,29 @@ namespace Dispatcher.StorySystem
             new SpeechNode(69, new SpeechBuilder().
                 Add(new Audio(Player_Paramedics_Arrived_Question_Correct))),
             // 68 - Player Paramedics Arrived Question Incorrect
-            new SpeechNode(72, new SpeechBuilder().
+            new FinishWithCardNode("Birth Call Completed", "Thanks to you, Tim and Charlotte's baby was safely delivered!  The password 'Stork' will be useful for later on in the game, so don't forget it.  Stork Artwork: Pedro Alves.",
+                "https://s3-eu-west-1.amazonaws.com/rtg-dispatcher/icons/StorkIconSmall.png",
+                "https://s3-eu-west-1.amazonaws.com/rtg-dispatcher/icons/StorkIconLarge.png", new SpeechBuilder().
                 Add(new Audio(Player_Paramedics_Arrived_Question_Incorrect)).
                 Add(new Audio(Outro)).
-                Add(new Sentence("Would you like to hear the credits?"))),
+                Add(new Audio(Credits))),
             // 69 - Well done!
             new CheckNextIntentNode(70, WellDoneIntent, 71, "WellDone_Correct"),
             // 70 - Well Done Correct
-            new SpeechNode(72, new SpeechBuilder().
+            new FinishWithCardNode("Birth Call Completed", "Thanks to you, Tim and Charlotte's baby was safely delivered!  The password 'Stork' will be useful for later on in the game, so don't forget it.  Stork Artwork: Pedro Alves.",
+                "https://s3-eu-west-1.amazonaws.com/rtg-dispatcher/icons/StorkIconSmall.png",
+                "https://s3-eu-west-1.amazonaws.com/rtg-dispatcher/icons/StorkIconLarge.png", new SpeechBuilder().
                 Add(new Audio(Well_Done_Correct)).
                 Add(new Audio(Outro)).
-                Add(new Sentence("Would you like to hear the credits?"))),
+                Add(new Audio(Credits))),
             // 71 - Well Done Incorrect
-            new SpeechNode(72, new SpeechBuilder().
+            new FinishWithCardNode("Birth Call Completed", "Thanks to you, Tim and Charlotte's baby was safely delivered!  The password 'Stork' will be useful for later on in the game, so don't forget it.  Stork Artwork: Pedro Alves.",
+                "https://s3-eu-west-1.amazonaws.com/rtg-dispatcher/icons/StorkIconSmall.png",
+                "https://s3-eu-west-1.amazonaws.com/rtg-dispatcher/icons/StorkIconLarge.png", new SpeechBuilder().
                 Add(new Audio(Well_Done_Incorrect)).
                 Add(new Audio(Outro)).
-                Add(new Sentence("Would you like to hear the credits?"))),
-            // 72 - Does player want to hear the credits
-            ConditionNode.CreateYesNoChoiceNode(73, 74),
-            // 73 - Credits
-            new FinishWithCardNode("Birth Call Completed", "Thanks to you, Tim and Charlotte's baby was safely delivered!  The password 'Stork' will be useful for later on in the game, so don't forget it.  Stork Artwork: Pedro Alves.",
-                "https://s3-eu-west-1.amazonaws.com/rtg-dispatcher/icons/StorkIconSmall.png",
-                "https://s3-eu-west-1.amazonaws.com/rtg-dispatcher/icons/StorkIconLarge.png", new SpeechBuilder().
                 Add(new Audio(Credits))),
-            // 74 - No Credits
-            new FinishWithCardNode("Birth Call Completed", "Thanks to you, Tim and Charlotte's baby was safely delivered!  The password 'Stork' will be useful for later on in the game, so don't forget it.  Stork Artwork: Pedro Alves.",
-                "https://s3-eu-west-1.amazonaws.com/rtg-dispatcher/icons/StorkIconSmall.png",
-                "https://s3-eu-west-1.amazonaws.com/rtg-dispatcher/icons/StorkIconLarge.png", new SpeechBuilder().
-                Add(new Audio(Goodbye))),
-            // 75 - Skipped Intro, Dispatcher Ready Question
+            // 72 - Skipped Intro, Dispatcher Ready Question
             new SpeechNode(1, new SpeechBuilder().
                 Add(new Audio(Dispatcher_Ready_Question))),
         };

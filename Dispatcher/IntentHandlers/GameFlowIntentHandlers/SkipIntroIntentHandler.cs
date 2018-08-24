@@ -38,8 +38,7 @@ namespace Dispatcher.IntentHandlers
             int currentNodeIndex = session.GetCurrentNodeIndex();
             if (currentNodeIndex == 1)
             {
-                // 75 is currently the node with the skipped intro dialog
-                return Story.CreateResponseForNode(75, null, session, lambdaContext);
+                return Story.CreateResponseForNode(Story.SkipNodeIndex, null, session, lambdaContext);
             }
             else
             {
